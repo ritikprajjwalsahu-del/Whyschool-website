@@ -3,1125 +3,1063 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Illumina Strategic Account & HCLTech AI Capability Portal</title>
-  <meta name="description" content="Executive account briefing and AI capability alignment portal connecting Illumina's genomic technology dominance with HCLTech's AI Force, AI Foundry, and VisionX enterprise platforms.">
-  <!-- Google Fonts & Chart.js & Lucide Icons -->
+  <title>WhySchool. | Ultimate Beyond Curriculum Ecosystem</title>
+  <meta name="description" content="WhySchool. is the ultimate beyond curriculum ecosystem, empowering K-12 schools and colleges with real-world experiential learning, AI labs, venture incubators, and global research mentorship.">
+  
+  <!-- Google Fonts: Raleway Variable Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark-theme">
+<body>
 
-  <!-- Top Executive Header Bar -->
-  <header class="app-header">
-    <div class="header-container">
-      <div class="brand-badge-group">
-        <div class="brand-badge illumina-badge">
-          <span class="badge-dot cyan-pulse"></span>
-          <span class="badge-title">ILLUMINA</span>
-          <span class="badge-subtitle">NASDAQ: ILMN</span>
-        </div>
-        <div class="brand-divider"><i data-lucide="zap"></i></div>
-        <div class="brand-badge hcl-badge">
-          <span class="badge-dot purple-pulse"></span>
-          <span class="badge-title">HCLTech</span>
-          <span class="badge-subtitle">AI & DATA CAPABILITIES</span>
-        </div>
-      </div>
-      <div class="header-center">
-        <h1 class="header-main-title">Strategic Account Intelligence & Transformation Portal</h1>
-        <p class="header-sub">End-to-End Account Positioning, Leadership Alignment & AI Platform Matchmaker • FY2026–FY2027 Horizon</p>
-      </div>
-      <div class="header-actions">
-        <button id="themeToggleBtn" class="btn-icon" title="Toggle Light/Dark Theme">
-          <i data-lucide="sun"></i>
+  <!-- ==========================================================================
+       HEADER & NAVIGATION BAR
+       ========================================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" title="WhySchool Home">
+        <span class="logo-why">Why</span><span class="logo-school">School</span><span class="logo-dot"></span>
+      </a>
+      
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#methodology" class="nav-link">What We Deliver</a></li>
+        <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+        <li><a href="#partners" class="nav-link">Partner Institutions</a></li>
+        <li><a href="#k12-programs" class="nav-link">For K-12 Schools</a></li>
+        <li><a href="#college-programs" class="nav-link">For Colleges</a></li>
+        <li><a href="#impact-calculator" class="nav-link">Impact Calculator</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <button class="btn btn-primary btn-sm" onclick="openInquiryModal('Ecosystem Demo')">
+          Partner With Us
         </button>
-        <button id="presentationModeBtn" class="btn-accent">
-          <i data-lucide="presentation"></i> Pitch Deck Mode
-        </button>
-        <button id="exportReportBtn" class="btn-outline">
-          <i data-lucide="download"></i> Executive Briefing PDF
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <i data-lucide="menu"></i>
         </button>
       </div>
-    </div>
-  </header>
-
-  <!-- Persona & Quick Search Filter Bar -->
-  <section class="control-bar-section">
-    <div class="control-bar-container">
-      <div class="persona-selector-group">
-        <span class="control-label"><i data-lucide="user-check"></i> Target Executive Persona:</span>
-        <button class="persona-chip active" data-persona="all">
-          <i data-lucide="users"></i> All Executive C-Suite
-        </button>
-        <button class="persona-chip" data-persona="ceo">
-          <i data-lucide="award"></i> CEO (Jacob Thaysen)
-        </button>
-        <button class="persona-chip" data-persona="cfo">
-          <i data-lucide="trending-up"></i> CFO (Ankur Dhingra)
-        </button>
-        <button class="persona-chip" data-persona="cto">
-          <i data-lucide="cpu"></i> CTO (Mark Field)
-        </button>
-        <button class="persona-chip" data-persona="cmo">
-          <i data-lucide="heart-pulse"></i> CMO (Dr. Eric Green)
-        </button>
-        <button class="persona-chip" data-persona="cco">
-          <i data-lucide="briefcase"></i> CCO (Michael Sullivan)
-        </button>
-      </div>
-
-      <div class="search-box-wrapper">
-        <i data-lucide="search" class="search-icon"></i>
-        <input type="text" id="globalSearchInput" placeholder="Search capabilities, metrics, leadership, plays...">
-        <span class="search-kbd">⌘K</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Key Metrics Hero Bar -->
-  <section class="metrics-hero-section">
-    <div class="metrics-grid">
-      <!-- Metric Card 1 -->
-      <div class="metric-card cyan-glow">
-        <div class="metric-header">
-          <span class="metric-label">FY26 Rev Guidance (Max)</span>
-          <span class="metric-tag tag-green">+9.5% YoY Q2</span>
-        </div>
-        <div class="metric-value">$4.64B</div>
-        <div class="metric-sub">Raised from $4.60B • ROW Organic >5%</div>
-      </div>
-      <!-- Metric Card 2 -->
-      <div class="metric-card purple-glow">
-        <div class="metric-header">
-          <span class="metric-label">Non-GAAP Operating Margin</span>
-          <span class="metric-tag tag-purple">FY26 Target</span>
-        </div>
-        <div class="metric-value">23.6%</div>
-        <div class="metric-sub">Up from 21.9% in Q1 • EPS $5.30–$5.40</div>
-      </div>
-      <!-- Metric Card 3 -->
-      <div class="metric-card blue-glow">
-        <div class="metric-header">
-          <span class="metric-label">Clinical Consumables Growth</span>
-          <span class="metric-tag tag-blue">Rest of World (ROW)</span>
-        </div>
-        <div class="metric-value">+20%</div>
-        <div class="metric-sub">Oncology, NIPT, Rare Disease adoption</div>
-      </div>
-      <!-- Metric Card 4 -->
-      <div class="metric-card gold-glow">
-        <div class="metric-header">
-          <span class="metric-label">HCLTech AI Enterprise Rev</span>
-          <span class="metric-tag tag-gold">Scale & Speed</span>
-        </div>
-        <div class="metric-value">$790M+</div>
-        <div class="metric-sub">150K+ AI Workforce • 300+ Pre-built Agents</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Navigation Tabs -->
-  <nav class="main-tabs-nav">
-    <div class="tabs-container">
-      <button class="nav-tab active" data-tab="tab-illumina">
-        <i data-lucide="dna"></i> 1. Illumina Corporate Deep-Dive
-      </button>
-      <button class="nav-tab" data-tab="tab-hcl">
-        <i data-lucide="bot"></i> 2. HCLTech AI & Data Capabilities
-      </button>
-      <button class="nav-tab" data-tab="tab-synergy">
-        <i data-lucide="git-merge"></i> 3. Opportunity Matchmaker (7 Plays)
-      </button>
-      <button class="nav-tab" data-tab="tab-pocs">
-        <i data-lucide="rocket"></i> 4. Near-Term PoC Showcase
-      </button>
-      <button class="nav-tab" data-tab="tab-roi">
-        <i data-lucide="calculator"></i> 5. ROI & Value Calculator
-      </button>
     </div>
   </nav>
 
-  <!-- MAIN CONTENT CONTAINER -->
-  <main class="main-content">
-
-    <!-- ==========================================
-         TAB 1: ILLUMINA CORPORATE DEEP DIVE
-    ========================================== -->
-    <section id="tab-illumina" class="tab-pane active">
-      <div class="section-intro-card">
-        <div class="intro-icon"><i data-lucide="building-2"></i></div>
-        <div class="intro-text">
-          <h2>Illumina Inc. End-to-End Company Profile & Strategic Context</h2>
-          <p>Illumina is the global leader in DNA sequencing and array-based technologies. Guided by its mission to <em>“improve human health by unlocking the power of the genome,”</em> Illumina serves research institutes, clinical diagnostic labs, and pharmaceutical giants worldwide.</p>
-        </div>
-      </div>
-
-      <!-- Financial Chart & Technology Pillars Grid -->
-      <div class="grid-2col">
-        <!-- Financial Chart Card -->
-        <div class="content-card">
-          <div class="card-header">
-            <h3><i data-lucide="trending-up"></i> Financial Performance & FY2026 Guidance Trend</h3>
-            <span class="card-badge">Data: FY25-FY26 Q2</span>
-          </div>
-          <div class="card-body">
-            <div class="chart-wrapper">
-              <canvas id="financialChart"></canvas>
-            </div>
-            <div class="financial-summary-list">
-              <div class="fin-item">
-                <span class="fin-label">FY2025 Full Year Revenue</span>
-                <span class="fin-val">~$4.34 Billion (Net Income ~$850M)</span>
-              </div>
-              <div class="fin-item">
-                <span class="fin-label">Q2 2026 Revenue (Actual)</span>
-                <span class="fin-val">$1.159 Billion (+9.5% YoY growth)</span>
-              </div>
-              <div class="fin-item">
-                <span class="fin-label">Share Buyback Auth.</span>
-                <span class="fin-val">$1.5 Billion Authorized</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Core Business Model Pillars -->
-        <div class="content-card">
-          <div class="card-header">
-            <h3><i data-lucide="layers"></i> Core Operating Model & Technology Pillars</h3>
-            <span class="card-badge">Key Revenue Engines</span>
-          </div>
-          <div class="card-body">
-            <div class="pillars-accordion">
-              <div class="pillar-box">
-                <div class="pillar-icon"><i data-lucide="repeat"></i></div>
-                <div class="pillar-content">
-                  <h4>Consumables-Driven Business Model</h4>
-                  <p>High-margin recurring revenues generated from sequencing reagents, flow cells, and diagnostic kits, supplemented by high-throughput instrument sales (NovaSeq, NextSeq, MiSeq), service contracts, and informatics software.</p>
-                </div>
-              </div>
-
-              <div class="pillar-box">
-                <div class="pillar-icon"><i data-lucide="cpu"></i></div>
-                <div class="pillar-content">
-                  <h4>Next-Generation Sequencing (NGS) Dominance</h4>
-                  <p>The NovaSeq X series serves as the flagship high-throughput platform driving global scale, lower cost-per-gigabase, and expanding clinical adoption across oncology and multiomics.</p>
-                </div>
-              </div>
-
-              <div class="pillar-box">
-                <div class="pillar-icon"><i data-lucide="stethoscope"></i></div>
-                <div class="pillar-content">
-                  <h4>Clinical Genomics Acceleration</h4>
-                  <p>Strong growth in clinical consumables (+20% ROW) across oncology, reproductive health, and rare disease diagnostics in hospital & reference lab networks.</p>
-                </div>
-              </div>
-
-              <div class="pillar-box">
-                <div class="pillar-icon"><i data-lucide="git-branch"></i></div>
-                <div class="pillar-content">
-                  <h4>Multiomics & Proteomics Integration</h4>
-                  <p>Following the 2025 SomaLogic acquisition, Illumina has integrated high-throughput proteomics into its sequencing ecosystem, creating multi-modal workflow demands.</p>
-                </div>
-              </div>
-
-              <div class="pillar-box">
-                <div class="pillar-icon"><i data-lucide="database"></i></div>
-                <div class="pillar-content">
-                  <h4>BioInsights & AI-Driven Data Products</h4>
-                  <p>Monetizing genomic data through initiatives like the <em>Billion Cell Atlas</em>, partnering with pharma giants (AstraZeneca, Merck, Eli Lilly) to enable AI-driven target discovery.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Executive Leadership & Strategic Governance Matrix -->
-      <div class="content-card margin-top">
-        <div class="card-header">
-          <h3><i data-lucide="users"></i> Executive Leadership Matrix & Strategic Significance for HCLTech</h3>
-          <span class="card-badge">Leadership Realignment 2025–2026</span>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="custom-table" id="leadershipTable">
-              <thead>
-                <tr>
-                  <th>Executive Name</th>
-                  <th>Current Title / Role</th>
-                  <th>Appointed</th>
-                  <th>Strategic Focus & HCLTech Positioning Strategy</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr data-persona="ceo">
-                  <td>
-                    <div class="exec-name-cell">
-                      <div class="exec-avatar">JT</div>
-                      <div>
-                        <strong>Jacob Thaysen, Ph.D.</strong>
-                        <span class="exec-role">Chief Executive Officer</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td>CEO</td>
-                  <td>Sep 2023 (Interim CCO 2026)</td>
-                  <td>Driving operational excellence, NovaSeq X global rollout, commercial acceleration, and expanding high-margin clinical consumables.</td>
-                  <td><button class="btn-table-pitch" onclick="filterPersona('ceo')"><i data-lucide="target"></i> View CEO Pitch</button></td>
-                </tr>
-
-                <tr data-persona="cfo">
-                  <td>
-                    <div class="exec-name-cell">
-                      <div class="exec-avatar">AD</div>
-                      <div>
-                        <strong>Ankur Dhingra</strong>
-                        <span class="exec-role">Chief Financial Officer</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td>CFO</td>
-                  <td>Apr 2024</td>
-                  <td>Margin expansion (23.6% target), capital allocation ($1.5B buyback), ERP transformations, and cloud consumption cost optimization.</td>
-                  <td><button class="btn-table-pitch" onclick="filterPersona('cfo')"><i data-lucide="target"></i> View CFO Pitch</button></td>
-                </tr>
-
-                <tr data-persona="cco">
-                  <td>
-                    <div class="exec-name-cell">
-                      <div class="exec-avatar">MS</div>
-                      <div>
-                        <strong>Michael Sullivan</strong>
-                        <span class="exec-role">Chief Commercial Officer</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td>CCO</td>
-                  <td>Effective July 20, 2026</td>
-                  <td>Scaling global commercial strategy, GTM execution, expanding enterprise biopharma partnerships, Quote-to-Cash automation.</td>
-                  <td><button class="btn-table-pitch" onclick="filterPersona('cco')"><i data-lucide="target"></i> View CCO Pitch</button></td>
-                </tr>
-
-                <tr data-persona="cmo">
-                  <td>
-                    <div class="exec-name-cell">
-                      <div class="exec-avatar">EG</div>
-                      <div>
-                        <strong>Dr. Eric D. Green, M.D., Ph.D.</strong>
-                        <span class="exec-role">Chief Medical Officer</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td>CMO</td>
-                  <td>Effective Feb 2, 2026</td>
-                  <td>Expanding clinical genomics, precision medicine, hospital EHR/LIS integrations, GxP validation, and diagnostic regulatory approvals.</td>
-                  <td><button class="btn-table-pitch" onclick="filterPersona('cmo')"><i data-lucide="target"></i> View CMO Pitch</button></td>
-                </tr>
-
-                <tr data-persona="cmo">
-                  <td>
-                    <div class="exec-name-cell">
-                      <div class="exec-avatar">JC</div>
-                      <div>
-                        <strong>Julie Coletti</strong>
-                        <span class="exec-role">Chief Legal Officer</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td>CLO</td>
-                  <td>Effective Aug 3, 2026</td>
-                  <td>Global compliance, cross-border data privacy, regulatory risk management, and data localization between Rest of World vs. China.</td>
-                  <td><button class="btn-table-pitch" onclick="filterPersona('cmo')"><i data-lucide="target"></i> View CLO Pitch</button></td>
-                </tr>
-
-                <tr data-persona="cto">
-                  <td>
-                    <div class="exec-name-cell">
-                      <div class="exec-avatar">MF</div>
-                      <div>
-                        <strong>Mark Field</strong>
-                        <span class="exec-role">Chief Technology & R&D Officer</span>
-                      </div>
-                    </div>
-                  </td>
-                  <td>CTO & R&D</td>
-                  <td>May 2025</td>
-                  <td>Platform consolidation, SomaLogic multiomics tech integration, DRAGEN pipeline devsecops, BioInsights AI informatics.</td>
-                  <td><button class="btn-table-pitch" onclick="filterPersona('cto')"><i data-lucide="target"></i> View CTO Pitch</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <!-- Strategic News Themes & Geopolitical Trends -->
-      <div class="grid-2col margin-top">
-        <div class="content-card">
-          <div class="card-header">
-            <h3><i data-lucide="newspaper"></i> Strategic News & Key Industry Drivers</h3>
-          </div>
-          <div class="card-body">
-            <div class="news-timeline">
-              <div class="news-item">
-                <span class="news-badge badge-blue">Clinical Growth</span>
-                <h4>Clinical Genomics & Regulatory Integration</h4>
-                <p>Clinical consumables growth outside China (+20%) is Illumina’s primary growth accelerator. Dr. Eric Green's appointment marks a major corporate pivot toward clinical diagnostics, GxP workflows, and hospital EHR integration.</p>
-              </div>
-
-              <div class="news-item">
-                <span class="news-badge badge-purple">Multiomics</span>
-                <h4>SomaLogic Proteomics Platform Integration</h4>
-                <p>Following the 2025 acquisition, Illumina is building single-cell and high-throughput proteomics capabilities directly into its sequencing workflow, creating a need for unified multi-modal data lakes.</p>
-              </div>
-
-              <div class="news-item">
-                <span class="news-badge badge-cyan">AI & Biopharma</span>
-                <h4>BioInsights & Billion Cell Atlas Expansion</h4>
-                <p>Partnerships with AstraZeneca, Merck, and Eli Lilly position Illumina as a biopharma data provider, necessitating enterprise MLOps, privacy-preserving federated analytics, and secure query APIs.</p>
-              </div>
-
-              <div class="news-item">
-                <span class="news-badge badge-gold">Geopolitics</span>
-                <h4>China Unreliable Entities List & Data Separation</h4>
-                <p>Illumina’s inclusion on China’s Unreliable Entities List creates an urgent imperative for strict data localization and distinct cloud architectures between Rest of World (ROW) and China operations.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Marketing & Executive Events Calendar -->
-        <div class="content-card">
-          <div class="card-header">
-            <h3><i data-lucide="calendar"></i> Executive Marketing & ABM Calendar (2026)</h3>
-          </div>
-          <div class="card-body">
-            <div class="event-cards-list">
-              <div class="event-card">
-                <div class="event-date-box">
-                  <span class="event-month">JAN</span>
-                  <span class="event-day">13</span>
-                </div>
-                <div class="event-info">
-                  <h4>J.P. Morgan Healthcare Conference</h4>
-                  <span class="event-meta">San Francisco, CA • Investor Conference</span>
-                  <p><strong>Illumina Focus:</strong> FY25 Results & Strategic Outlook</p>
-                  <p><strong>HCLTech Play:</strong> C-suite briefing on scalable IT infrastructure for FY26 growth targets.</p>
-                </div>
-              </div>
-
-              <div class="event-card">
-                <div class="event-date-box">
-                  <span class="event-month">JAN</span>
-                  <span class="event-day">28-29</span>
-                </div>
-                <div class="event-info">
-                  <h4>Festival of Genomics 2026</h4>
-                  <span class="event-meta">London, UK • Scientific / Clinical Showcase</span>
-                  <p><strong>Illumina Focus:</strong> Clinical NGS & Multiomics Showcase</p>
-                  <p><strong>HCLTech Play:</strong> Sponsor co-briefings on GxP-compliant cloud platforms for clinical labs.</p>
-                </div>
-              </div>
-
-              <div class="event-card">
-                <div class="event-date-box">
-                  <span class="event-month">MAR</span>
-                  <span class="event-day">03</span>
-                </div>
-                <div class="event-info">
-                  <h4>TD Cowen Healthcare Conference</h4>
-                  <span class="event-meta">Virtual • Investor Conference</span>
-                  <p><strong>Illumina Focus:</strong> Commercial Strategy & Operating Margins</p>
-                  <p><strong>HCLTech Play:</strong> Target CFO Ankur Dhingra with cloud cost optimization & ERP modernization decks.</p>
-                </div>
-              </div>
-
-              <div class="event-card">
-                <div class="event-date-box">
-                  <span class="event-month">MAY</span>
-                  <span class="event-day">2026</span>
-                </div>
-                <div class="event-info">
-                  <h4>ESHG & Innovation Symposia</h4>
-                  <span class="event-meta">EMEA • Scientific & Clinical</span>
-                  <p><strong>Illumina Focus:</strong> Long-range insights & DRAGEN workflows</p>
-                  <p><strong>HCLTech Play:</strong> Demonstrate digital lab solutions, instrument telemetry, and LIMS integrations.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         TAB 2: HCLTECH AI & DATA CAPABILITIES
-    ========================================== -->
-    <section id="tab-hcl" class="tab-pane">
-      <div class="section-intro-card purple-theme">
-        <div class="intro-icon"><i data-lucide="sparkles"></i></div>
-        <div class="intro-text">
-          <h2>HCLTech AI & Data Capabilities Ecosystem</h2>
-          <p>HCLTech leverages a deep hardware-to-cloud engineering DNA to bridge IT, OT, and ET. With over <strong>$790M+ in Advanced AI Revenue</strong>, <strong>150K+ AI-Trained Workforce</strong>, and <strong>12,000+ Certified AI Engineers</strong>, HCLTech accelerates enterprise transitions from isolated AI experimentation to secure, production-grade intelligence.</p>
-        </div>
-      </div>
-
-      <!-- Flagship Enterprise AI Platforms -->
-      <div class="card-section-title">
-        <h3><i data-lucide="cpu"></i> Flagship Enterprise AI Platforms</h3>
-      </div>
-
-      <div class="grid-3col">
-        <!-- Platform 1: AI Force -->
-        <div class="platform-card gradient-border-purple">
-          <div class="platform-header">
-            <span class="platform-tag">GenAI & Agentic Automation</span>
-            <h3>HCLTech AI Force™</h3>
-          </div>
-          <p class="platform-desc">Patented multi-tenant enterprise platform unifying prompts, RAG pipelines, autonomous AI agents, multi-LLM orchestration, and safety guardrails.</p>
-          <div class="platform-features">
-            <div class="feat-item"><i data-lucide="check-circle-2"></i> <strong>AI Force.Software:</strong> SDLC automation (code gen, refactoring, test script creation).</div>
-            <div class="feat-item"><i data-lucide="check-circle-2"></i> <strong>AI Force.Data.Dev:</strong> Natural-language SQL modernization & ETL creation.</div>
-            <div class="feat-item"><i data-lucide="check-circle-2"></i> <strong>AI Force.Data.Ops:</strong> Pipeline health monitoring & incident auto-remediation.</div>
-            <div class="feat-item"><i data-lucide="check-circle-2"></i> <strong>AI Force for SAP/Pega:</strong> Accelerated application migration & test automation.</div>
-          </div>
-        </div>
-
-        <!-- Platform 2: AI Foundry -->
-        <div class="platform-card gradient-border-blue">
-          <div class="platform-header">
-            <span class="platform-tag">Managed AI & Scaling Ecosystem</span>
-            <h3>HCLTech AI Foundry</h3>
-          </div>
-          <p class="platform-desc">Enterprise-scale Data & AI managed service solution bridging pilot-to-production gaps across multi-cloud and edge infrastructure.</p>
-          <div class="platform-features">
-            <div class="feat-item"><i data-lucide="zap"></i> <strong>5x Value Improvement:</strong> Up to 50% faster time to production.</div>
-            <div class="feat-item"><i data-lucide="shield-check"></i> <strong>87.5% Faster Compliance:</strong> Automated compliance alert close times.</div>
-            <div class="feat-item"><i data-lucide="grid"></i> <strong>Agent Hub:</strong> Curated repository of pre-built domain AI models & templates.</div>
-            <div class="feat-item"><i data-lucide="cloud"></i> <strong>Multi-Cloud Native:</strong> AWS, Azure, GCP, IBM, NVIDIA, Dell, HPE.</div>
-          </div>
-        </div>
-
-        <!-- Platform 3: VisionX -->
-        <div class="platform-card gradient-border-cyan">
-          <div class="platform-header">
-            <span class="platform-tag">Multimodal Edge AI</span>
-            <h3>HCLTech VisionX</h3>
-          </div>
-          <p class="platform-desc">Brings real-time intelligence to physical operations by converting visual, audio, and IoT sensor streams into automated workflows.</p>
-          <div class="platform-features">
-            <div class="feat-item"><i data-lucide="eye"></i> <strong>60+ Deep Learning Models:</strong> Real-time computer vision & telemetry.</div>
-            <div class="feat-item"><i data-lucide="hard-drive"></i> <strong>Edge Native:</strong> NVIDIA & Dell NativeEdge OS integration.</div>
-            <div class="feat-item"><i data-lucide="lock"></i> <strong>Zero-Trust Governance:</strong> High-risk environmental hazard reduction.</div>
-            <div class="feat-item"><i data-lucide="activity"></i> <strong>Smart Lab Operations:</strong> Real-time instrument run monitoring & anomaly alerts.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- End-to-End Service Domains Architecture -->
-      <div class="content-card margin-top">
-        <div class="card-header">
-          <h3><i data-lucide="grid"></i> End-to-End Data & AI Service Architecture</h3>
-        </div>
-        <div class="card-body">
-          <div class="services-grid">
-            <div class="service-tile">
-              <div class="s-icon"><i data-lucide="compass"></i></div>
-              <h4>Data Strategy & Advisory</h4>
-              <p>AI readiness assessments, data modernization roadmaps, enterprise data architecture, governance strategy.</p>
-            </div>
-            <div class="service-tile">
-              <div class="s-icon"><i data-lucide="database"></i></div>
-              <h4>Modern Data Engineering</h4>
-              <p>Data Lakehouse, Data Fabric, Data Mesh, multi-cloud migration, high-throughput pipelines.</p>
-            </div>
-            <div class="service-tile">
-              <div class="s-icon"><i data-lucide="shield"></i></div>
-              <h4>Data Quality & Governance</h4>
-              <p>Automated lineage mapping, zero-trust access control, ISO/IEC 42001 Responsible AI alignment.</p>
-            </div>
-            <div class="service-tile">
-              <div class="s-icon"><i data-lucide="bot"></i></div>
-              <h4>Generative & Agentic AI</h4>
-              <p>Custom LLM fine-tuning, RAG pipelines, multi-agent orchestration, SLM deployments.</p>
-            </div>
-            <div class="service-tile">
-              <div class="s-icon"><i data-lucide="bar-chart-3"></i></div>
-              <h4>Advanced Analytics & BI</h4>
-              <p>Executive BI portals, smart natural-language narratives, interactive predictive modeling.</p>
-            </div>
-            <div class="service-tile">
-              <div class="s-icon"><i data-lucide="cpu"></i></div>
-              <h4>Physical & Edge AI (VisionX)</h4>
-              <p>Computer vision, video stream processing, IoT sensor integration, edge-to-cloud sync.</p>
-            </div>
-            <div class="service-tile">
-              <div class="s-icon"><i data-lucide="refresh-cw"></i></div>
-              <h4>DataOps & MLOps</h4>
-              <p>Model lifecycle management (CI/CD), synthetic data generation, continuous retrain loops, drift monitoring.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Strategic Differentiators & Hyperscaler Partnerships -->
-      <div class="grid-2col margin-top">
-        <div class="content-card">
-          <div class="card-header">
-            <h3><i data-lucide="award"></i> HCLTech Strategic Differentiators</h3>
-          </div>
-          <div class="card-body">
-            <ul class="diff-list">
-              <li>
-                <div class="diff-title"><i data-lucide="cpu"></i> Hardware-to-Cloud DNA (Full-Stack Mastery)</div>
-                <div class="diff-desc">Decades of engineering expertise in silicon, hardware, embedded devices, and cloud enable HCLTech to optimize AI models down to the silicon level.</div>
-              </li>
-              <li>
-                <div class="diff-title"><i data-lucide="check-square"></i> ISO/IEC 42001 Certified Responsible AI</div>
-                <div class="diff-desc">Achieved ISO/IEC 42001:2023 certification, embedding fairness, explainability, safety, bias prevention, and auditability into all builds.</div>
-              </li>
-              <li>
-                <div class="diff-title"><i data-lucide="globe"></i> Global AI & Cloud Native Co-Innovation Labs</div>
-                <div class="diff-desc">Global network of physical labs across North America, Europe, and APAC dedicated to client co-innovation, rapid prototyping, and benchmarking.</div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="content-card">
-          <div class="card-header">
-            <h3><i data-lucide="share-2"></i> Ecosystem Leadership & Hyperscaler Alliances</h3>
-          </div>
-          <div class="card-body">
-            <div class="partners-grid">
-              <div class="partner-card">
-                <span class="partner-name">Microsoft Azure</span>
-                <span class="partner-badge">Azure Expert MSP</span>
-              </div>
-              <div class="partner-card">
-                <span class="partner-name">Google Cloud</span>
-                <span class="partner-badge">Breakthrough Partner of Year</span>
-              </div>
-              <div class="partner-card">
-                <span class="partner-name">AWS</span>
-                <span class="partner-badge">Premier Tier Partner</span>
-              </div>
-              <div class="partner-card">
-                <span class="partner-name">NVIDIA & Dell</span>
-                <span class="partner-badge">Edge AI Co-Engineering</span>
-              </div>
-              <div class="partner-card">
-                <span class="partner-name">SAP & Pega</span>
-                <span class="partner-badge">Global Transformation Partner</span>
-              </div>
-              <div class="partner-card">
-                <span class="partner-name">AMD & HPE</span>
-                <span class="partner-badge">Strategic Silicon & Infra</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         TAB 3: STRATEGIC OPPORTUNITY MATCHMAKER (7 PLAYS)
-    ========================================== -->
-    <section id="tab-synergy" class="tab-pane">
-      <div class="section-intro-card blue-theme">
-        <div class="intro-icon"><i data-lucide="git-merge"></i></div>
-        <div class="intro-text">
-          <h2>Capability-to-Opportunity Synergy Engine (7 Transformation Plays)</h2>
-          <p>Directly mapping Illumina’s core business drivers and executive priorities to HCLTech’s service architecture reveals 7 strategic transformation plays designed for maximum ROI and speed-to-value.</p>
-        </div>
-      </div>
-
-      <!-- Interactive Plays Grid -->
-      <div class="plays-interactive-container">
-        <!-- Play A -->
-        <div class="play-card" data-play="play-a">
-          <div class="play-header">
-            <span class="play-letter">A</span>
-            <div class="play-title-group">
-              <h3>IT & Cloud Infrastructure Modernization</h3>
-              <span class="play-service">CLOUD & DATA ARCHITECTURES</span>
-            </div>
-            <span class="play-target-tag">Target: CTO & Cloud Leads</span>
-          </div>
-          <div class="play-body">
-            <ul class="play-bullets">
-              <li>Cloud migration & management (AWS/Azure/GCP) for high-burst NGS batch processing.</li>
-              <li>Lakehouse architecture implementation to unify genomics, transcriptomics, and SomaLogic proteomics data.</li>
-              <li>Platform engineering and DevSecOps for DRAGEN and custom bioinformatics pipelines.</li>
-            </ul>
-            <div class="pitch-box">
-              <span class="pitch-label"><i data-lucide="message-square-quote"></i> Pitch Angle for Illumina:</span>
-              <p class="pitch-quote">“Secure, cost-optimized multi-region cloud platform supporting elastic, large-scale multiomics analytics.”</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Play B -->
-        <div class="play-card" data-play="play-b">
-          <div class="play-header">
-            <span class="play-letter">B</span>
-            <div class="play-title-group">
-              <h3>AI/ML & Data Product Engineering (BioInsights)</h3>
-              <span class="play-service">DATA & ANALYTICS / AI</span>
-            </div>
-            <span class="play-target-tag">Target: CTO Mark Field & BioInsights VP</span>
-          </div>
-          <div class="play-body">
-            <ul class="play-bullets">
-              <li>Enterprise MLOps/LLMOps infrastructure for BioInsights' single-cell data platforms.</li>
-              <li>Data product engineering to transform raw genomic assets into API-driven pharma data products (Billion Cell Atlas).</li>
-              <li>Privacy-preserving analytics (federated learning, secure enclaves) for biopharma co-development.</li>
-            </ul>
-            <div class="pitch-box">
-              <span class="pitch-label"><i data-lucide="message-square-quote"></i> Pitch Angle for Illumina:</span>
-              <p class="pitch-quote">“Accelerating Illumina's BioInsights monetization through AI-ready data products and robust MLOps.”</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Play C -->
-        <div class="play-card" data-play="play-c">
-          <div class="play-header">
-            <span class="play-letter">C</span>
-            <div class="play-title-group">
-              <h3>Clinical & Diagnostics Digital Transformation</h3>
-              <span class="play-service">LIFE SCIENCES / HEALTHCARE</span>
-            </div>
-            <span class="play-target-tag">Target: CMO Dr. Eric Green</span>
-          </div>
-          <div class="play-body">
-            <ul class="play-bullets">
-              <li>LIMS/ELN selection, customization, and seamless integration with EHR/LIS hospital networks.</li>
-              <li>GxP, CLIA, and CAP compliant cloud data validation services for clinical NGS labs.</li>
-              <li>Computer System Validation (CSV) and CSA frameworks tailored to new CMO clinical initiatives.</li>
-            </ul>
-            <div class="pitch-box">
-              <span class="pitch-label"><i data-lucide="message-square-quote"></i> Pitch Angle for Illumina:</span>
-              <p class="pitch-quote">“Regulatory-grade, end-to-end digital lab integration for scaling clinical genomics globally.”</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Play D -->
-        <div class="play-card" data-play="play-d">
-          <div class="play-header">
-            <span class="play-letter">D</span>
-            <div class="play-title-group">
-              <h3>Instrument IoT, Telemetry & Digital Lab</h3>
-              <span class="play-service">IOT & ENGINEERING SERVICES (VisionX)</span>
-            </div>
-            <span class="play-target-tag">Target: COO Kevin Pegels & CCO Michael Sullivan</span>
-          </div>
-          <div class="play-body">
-            <ul class="play-bullets">
-              <li>IoT telemetry for NovaSeq X fleets: real-time run monitoring, anomaly detection, and remote diagnostics.</li>
-              <li>Predictive maintenance models to reduce instrument downtime in high-throughput customer labs.</li>
-              <li>Digital twin development for lab workflow capacity planning and reagent consumption tracking.</li>
-            </ul>
-            <div class="pitch-box">
-              <span class="pitch-label"><i data-lucide="message-square-quote"></i> Pitch Angle for Illumina:</span>
-              <p class="pitch-quote">“Connected smart lab operations: maximizing NovaSeq X uptime and real-time operational visibility.”</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Play E -->
-        <div class="play-card" data-play="play-e">
-          <div class="play-header">
-            <span class="play-letter">E</span>
-            <div class="play-title-group">
-              <h3>Digital Core & Enterprise Application Modernization</h3>
-              <span class="play-service">ENTERPRISE APPLICATIONS (AI Force for SAP)</span>
-            </div>
-            <span class="play-target-tag">Target: CFO Ankur Dhingra & CCO Michael Sullivan</span>
-          </div>
-          <div class="play-body">
-            <ul class="play-bullets">
-              <li>SAP / Oracle ERP upgrade and modernization (addressing cited ERP transformational spend).</li>
-              <li>Streamlining Quote-to-Cash, order management, and global service management workflows.</li>
-              <li>Integrated commercial analytics for incoming Chief Commercial Officer (Michael Sullivan).</li>
-            </ul>
-            <div class="pitch-box">
-              <span class="pitch-label"><i data-lucide="message-square-quote"></i> Pitch Angle for Illumina:</span>
-              <p class="pitch-quote">“Modernizing digital core applications to support complex multiomics and consumable sales models.”</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Play F -->
-        <div class="play-card" data-play="play-f">
-          <div class="play-header">
-            <span class="play-letter">F</span>
-            <div class="play-title-group">
-              <h3>Cybersecurity, Data Privacy & Geopolitical Compliance</h3>
-              <span class="play-service">CYBERSECURITY & GOVERNANCE</span>
-            </div>
-            <span class="play-target-tag">Target: CLO Julie Coletti & Security VP</span>
-          </div>
-          <div class="play-body">
-            <ul class="play-bullets">
-              <li>Zero-trust security implementation across clinical, research, and corporate environments.</li>
-              <li>Data localization and residency frameworks separating China operations from Rest of World (ROW).</li>
-              <li>HIPAA, GDPR, and ISO 27001 compliance frameworks for handling patient genomic data.</li>
-            </ul>
-            <div class="pitch-box">
-              <span class="pitch-label"><i data-lucide="message-square-quote"></i> Pitch Angle for Illumina:</span>
-              <p class="pitch-quote">“Global data governance and localized cloud architectures protecting multi-jurisdictional genomic assets.”</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         TAB 4: RECOMMENDED NEAR-TERM POC SHOWCASE
-    ========================================== -->
-    <section id="tab-pocs" class="tab-pane">
-      <div class="section-intro-card gold-theme">
-        <div class="intro-icon"><i data-lucide="rocket"></i></div>
-        <div class="intro-text">
-          <h2>Recommended Near-Term HCLTech Engagement Plays (PoCs)</h2>
-          <p>To establish immediate executive traction with Illumina's newly appointed C-suite, HCLTech should pitch three concrete 6-week Proof-of-Concept (PoC) initiatives targeted at key decision-makers.</p>
-        </div>
-      </div>
-
-      <div class="poc-showcase-grid">
-        <!-- PoC 1 -->
-        <div class="poc-card card-cyan">
-          <div class="poc-badge-header">
-            <span class="poc-number">PLAY 1</span>
-            <span class="poc-duration">6-Week Rapid PoC</span>
-          </div>
-          <h3 class="poc-title">Next-Gen BioInsights Data Platform</h3>
-          <div class="poc-target">
-            <i data-lucide="user"></i> <strong>Target Executive:</strong> CTO Mark Field & BioInsights VP
-          </div>
-          <div class="poc-platform-tag">
-            <i data-lucide="cpu"></i> Powered by <strong>HCLTech AI Force™ + MLOps Studio</strong>
-          </div>
-          <p class="poc-description">Propose a 6-week PoC demonstrating an optimized MLOps pipeline and secure API architecture for the <em>Billion Cell Atlas</em>, enabling biopharma partners (AstraZeneca, Merck, Eli Lilly) to query multiomics data with zero data leakage.</p>
-          <div class="poc-outcomes">
-            <h4>Expected Value & Metrics:</h4>
-            <ul>
-              <li><i data-lucide="check"></i> Secure federated query latency &lt; 500ms</li>
-              <li><i data-lucide="check"></i> Zero-trust data enclave architecture</li>
-              <li><i data-lucide="check"></i> 50% faster data product API monetization</li>
-            </ul>
-          </div>
-          <button class="btn-poc-flow" onclick="openPoCModal(1)">
-            <i data-lucide="network"></i> View Interactive PoC Architecture Flow
-          </button>
-        </div>
-
-        <!-- PoC 2 -->
-        <div class="poc-card card-purple">
-          <div class="poc-badge-header">
-            <span class="poc-number">PLAY 2</span>
-            <span class="poc-duration">8-Week Accelerator</span>
-          </div>
-          <h3 class="poc-title">GxP-Ready Clinical Lab Integration Accelerator</h3>
-          <div class="poc-target">
-            <i data-lucide="user"></i> <strong>Target Executive:</strong> CMO Dr. Eric Green
-          </div>
-          <div class="poc-platform-tag">
-            <i data-lucide="sparkles"></i> Powered by <strong>HCLTech AI Foundry + LIMS Connectors</strong>
-          </div>
-          <p class="poc-description">Offer a pre-validated LIMS/EHR connector framework that reduces onboarding time for clinical oncology and reference diagnostic labs deploying NovaSeq X instruments from months to weeks.</p>
-          <div class="poc-outcomes">
-            <h4>Expected Value & Metrics:</h4>
-            <ul>
-              <li><i data-lucide="check"></i> 70% reduction in lab EHR integration onboarding time</li>
-              <li><i data-lucide="check"></i> Pre-packaged CSV/CAP/CLIA audit documentation</li>
-              <li><i data-lucide="check"></i> Accelerated clinical consumable pull-through (+20% ROW)</li>
-            </ul>
-          </div>
-          <button class="btn-poc-flow" onclick="openPoCModal(2)">
-            <i data-lucide="network"></i> View Interactive PoC Architecture Flow
-          </button>
-        </div>
-
-        <!-- PoC 3 -->
-        <div class="poc-card card-blue">
-          <div class="poc-badge-header">
-            <span class="poc-number">PLAY 3</span>
-            <span class="poc-duration">4-Week Pilot</span>
-          </div>
-          <h3 class="poc-title">Smart Instrument IoT & Predictive Service Operations</h3>
-          <div class="poc-target">
-            <i data-lucide="user"></i> <strong>Target Executive:</strong> COO Kevin Pegels & CCO Michael Sullivan
-          </div>
-          <div class="poc-platform-tag">
-            <i data-lucide="eye"></i> Powered by <strong>HCLTech VisionX Multimodal Edge AI</strong>
-          </div>
-          <p class="poc-description">Demonstrate an IoT telemetry and predictive maintenance dashboard for NovaSeq fleet operators, reducing field service costs, preventing run failures, and optimizing consumable delivery cycles.</p>
-          <div class="poc-outcomes">
-            <h4>Expected Value & Metrics:</h4>
-            <ul>
-              <li><i data-lucide="check"></i> 40% reduction in unplanned NovaSeq fleet downtime</li>
-              <li><i data-lucide="check"></i> Real-time run anomaly detection & telemetry alerts</li>
-              <li><i data-lucide="check"></i> Predictive reagent consumption replenishment</li>
-            </ul>
-          </div>
-          <button class="btn-poc-flow" onclick="openPoCModal(3)">
-            <i data-lucide="network"></i> View Interactive PoC Architecture Flow
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         TAB 5: ROI & VALUE CALCULATOR
-    ========================================== -->
-    <section id="tab-roi" class="tab-pane">
-      <div class="section-intro-card green-theme">
-        <div class="intro-icon"><i data-lucide="calculator"></i></div>
-        <div class="intro-text">
-          <h2>HCLTech & Illumina Joint ROI & Transformation Simulator</h2>
-          <p>Use this interactive simulator to quantify potential operational savings, cloud cost optimization, and revenue acceleration achieved through HCLTech's 3 Flagship AI Platforms and Transformation Plays.</p>
-        </div>
-      </div>
-
-      <div class="grid-2col">
-        <!-- Interactive Controls -->
-        <div class="content-card">
-          <div class="card-header">
-            <h3><i data-lucide="sliders"></i> Transformation Parameters</h3>
-          </div>
-          <div class="card-body">
-            <div class="sim-control-group">
-              <label>Cloud Infrastructure & NGS Batch Spend ($M/yr): <span id="valCloudSpend">$45M</span></label>
-              <input type="range" id="inputCloudSpend" min="10" max="100" value="45" step="5">
-            </div>
-
-            <div class="sim-control-group">
-              <label>Number of NovaSeq X Fleets Deployed Globally: <span id="valFleets">850</span></label>
-              <input type="range" id="inputFleets" min="100" max="2500" value="850" step="50">
-            </div>
-
-            <div class="sim-control-group">
-              <label>Clinical Lab EHR Onboarding Count / Year: <span id="valLabs">120 Labs</span></label>
-              <input type="range" id="inputLabs" min="20" max="500" value="120" step="10">
-            </div>
-
-            <div class="sim-control-group">
-              <label>HCLTech AI Force & Foundry Acceleration Factor: <span id="valFactor">45% Savings</span></label>
-              <input type="range" id="inputFactor" min="20" max="60" value="45" step="5">
-            </div>
-          </div>
-        </div>
-
-        <!-- Dynamic ROI Results -->
-        <div class="content-card">
-          <div class="card-header">
-            <h3><i data-lucide="pie-chart"></i> Projected Annual Value Realization</h3>
-          </div>
-          <div class="card-body">
-            <div class="roi-results-grid">
-              <div class="roi-box">
-                <span class="roi-lbl">Cloud Infra Cost Reduction</span>
-                <span class="roi-val" id="resCloudSavings">$20.25M</span>
-                <span class="roi-sub">Driven by AI Force.Data.Dev optimization</span>
-              </div>
-
-              <div class="roi-box">
-                <span class="roi-lbl">Fleet Downtime Cost Savings</span>
-                <span class="roi-val" id="resFleetSavings">$12.75M</span>
-                <span class="roi-sub">Driven by VisionX Telemetry & Predictive Ops</span>
-              </div>
-
-              <div class="roi-box">
-                <span class="roi-lbl">Clinical Lab Onboarding Acceleration</span>
-                <span class="roi-val" id="resLabSavings">7,200 Days Saved</span>
-                <span class="roi-sub">Driven by AI Foundry Clinical Accelerator</span>
-              </div>
-
-              <div class="roi-box highlight-box">
-                <span class="roi-lbl">Total Estimated Net Business Impact</span>
-                <span class="roi-val" id="resTotalImpact">$33.00M / yr</span>
-                <span class="roi-sub">Equal to ~1.4% Operating Margin Expansion</span>
-              </div>
-            </div>
-
-            <div class="chart-wrapper margin-top-sm">
-              <canvas id="roiChart"></canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ==========================================
-       MODAL DIALOG: POC ARCHITECTURE FLOWCHART
-  ========================================== -->
-  <div id="pocModal" class="modal-overlay">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3 id="modalTitle">PoC Architecture Flow</h3>
-        <button class="modal-close" onclick="closePoCModal()">&times;</button>
-      </div>
-      <div class="modal-body" id="modalContent">
-        <!-- Dynamic content injected via JS -->
-      </div>
+  <!-- ==========================================================================
+       HERO SECTION - "ULTIMATE BEYOND CURRICULUM ECOSYSTEM"
+       ========================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-background">
+      <div class="hero-gradient-overlay"></div>
     </div>
-  </div>
+    
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Building Young India <span class="orange-text">Beyond Curriculums.</span>
+          </h1>
+          
+          <p class="hero-description">
+            Premier educational institutions and top brands trust <strong>WhySchool.</strong> as their strategic B2B experiential partner—building real-world innovators, researchers, and student founders beyond traditional syllabi. Degrees prove knowledge, but hands-on execution, leadership, and exposure build true future readiness.
+          </p>
+          
+          <div class="hero-cta-group">
+            <a href="#partners" class="btn btn-primary">
+              <i data-lucide="building-2"></i> View Partner Institutions
+            </a>
+          </div>
 
-  <!-- ==========================================
-       EXECUTIVE PRESENTATION PITCH DECK MODE
-  ========================================== -->
-  <div id="presentationOverlay" class="presentation-container">
-    <div class="deck-topbar">
-      <div class="deck-brand">
-        <span>ILLUMINA & HCLTech Strategic Executive Briefing</span>
-      </div>
-      <div class="deck-slide-indicator">
-        Slide <span id="currentSlideNum">1</span> of <span id="totalSlideNum">5</span>
-      </div>
-      <button class="btn-deck-exit" onclick="exitPresentationMode()">
-        <i data-lucide="x"></i> Exit Deck
-      </button>
-    </div>
+          <!-- Credentials Stacked Bar (Matching User Request) -->
+          <div class="credentials-section">
+            <div class="credentials-stack">
+              
+              <!-- Box 1: Built by founders from -->
+              <div class="credentials-card-group">
+                <h4 class="credentials-heading">Built by founders from:</h4>
+                <div class="credentials-pill-box">
+                  <div class="logo-box" title="NIT Rourkela">
+                    <img src="assets/logos/nit_rourkela.svg" alt="NIT Rourkela" class="cred-logo-img">
+                  </div>
+                  <div class="logo-box" title="ISB">
+                    <img src="assets/logos/isb.png" alt="ISB Indian School of Business" class="cred-logo-img">
+                  </div>
+                  <div class="logo-box" title="IIT Bombay">
+                    <img src="assets/logos/iit_bombay.svg" alt="IIT Bombay" class="cred-logo-img">
+                  </div>
+                  <div class="logo-box" title="Deloitte">
+                    <img src="assets/logos/deloitte.svg" alt="Deloitte" class="cred-logo-img">
+                  </div>
+                </div>
+              </div>
 
-    <div class="deck-slide-viewport">
-      <!-- SLIDE 1 -->
-      <div class="deck-slide active" data-slide="1">
-        <div class="slide-badge">EXECUTIVE SUMMARY</div>
-        <h1 class="slide-title">Illumina Strategic Account Intelligence & Positioning</h1>
-        <p class="slide-subtitle">Unlocking High-Margin Growth through AI & Cloud Engineering Partnership</p>
+              <!-- Box 2: Supported by trainers from (Stacked directly UNDER Built By Box) -->
+              <div class="credentials-card-group">
+                <h4 class="credentials-heading">Supported by trainers from:</h4>
+                <div class="credentials-pill-box">
+                  <div class="logo-box" title="Google">
+                    <img src="assets/logos/google.svg" alt="Google" class="cred-logo-img">
+                  </div>
+                  <div class="logo-box" title="ISRO">
+                    <img src="assets/logos/isro.svg" alt="ISRO" class="cred-logo-img">
+                  </div>
+                  <div class="logo-box" title="Deloitte">
+                    <img src="assets/logos/deloitte.svg" alt="Deloitte" class="cred-logo-img">
+                  </div>
+                  <div class="logo-box" title="PwC">
+                    <img src="assets/logos/pwc.svg" alt="PwC" class="cred-logo-img">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
         
-        <div class="slide-grid-3">
-          <div class="slide-metric-box">
-            <span class="s-val">$4.64B</span>
-            <span class="s-lbl">FY26 Rev Guidance (Raised)</span>
-          </div>
-          <div class="slide-metric-box">
-            <span class="s-val">23.6%</span>
-            <span class="s-lbl">Non-GAAP Operating Margin</span>
-          </div>
-          <div class="slide-metric-box">
-            <span class="s-val">$790M+</span>
-            <span class="s-lbl">HCLTech AI Revenue</span>
-          </div>
-        </div>
+        <div class="hero-visual">
+          <div class="hero-carousel-container" id="heroCarousel">
+            <div class="hero-carousel-track">
+              <!-- Slide 1 -->
+              <div class="hero-carousel-slide active">
+                <img src="assets/hero_1.jpg" alt="Interactive Student Pod Session">
+                <div class="hero-glass-overlay">
+                  <span class="overlay-chip"><i data-lucide="users"></i> Live Campus Session</span>
+                  <h3 class="overlay-title">Interactive Problem Solving & Mentorship</h3>
+                  <p class="overlay-subtitle">Hands-on guidance with real-world industry leaders.</p>
+                </div>
+              </div>
+              
+              <!-- Slide 2 -->
+              <div class="hero-carousel-slide">
+                <img src="assets/hero_2.jpg" alt="University Keynote & Workshop">
+                <div class="hero-glass-overlay">
+                  <span class="overlay-chip"><i data-lucide="award"></i> Campus Incubation</span>
+                  <h3 class="overlay-title">Empowering Higher Education Campuses</h3>
+                  <p class="overlay-subtitle">Keynotes, innovation summits & experiential pods at Utkal University.</p>
+                </div>
+              </div>
+              
+              <!-- Slide 3 -->
+              <div class="hero-carousel-slide">
+                <img src="assets/hero_3.jpg" alt="Auditorium Masterclass">
+                <div class="hero-glass-overlay">
+                  <span class="overlay-chip"><i data-lucide="sparkles"></i> Beyond Curriculum</span>
+                  <h3 class="overlay-title">Venture & Tech Masterclasses</h3>
+                  <p class="overlay-subtitle">Deep dives into AI, entrepreneurship, and financial literacy.</p>
+                </div>
+              </div>
 
-        <div class="slide-callout">
-          <i data-lucide="target"></i> <strong>Strategic Context:</strong> Following strong Q2 2026 results and strategic additions across C-suite (CMO Dr. Eric Green, CCO Michael Sullivan, CLO Julie Coletti), Illumina is poised for digital lab, multiomics (SomaLogic), and BioInsights transformation.
-        </div>
-      </div>
+              <!-- Slide 4 -->
+              <div class="hero-carousel-slide">
+                <img src="assets/hero_4.jpg" alt="WhySchool Cohort & Student Founders">
+                <div class="hero-glass-overlay">
+                  <span class="overlay-chip"><i data-lucide="rocket"></i> Student Cohorts</span>
+                  <h3 class="overlay-title">Student Founders & Innovators</h3>
+                  <p class="overlay-subtitle">Building real micro-ventures and patent-ready projects together.</p>
+                </div>
+              </div>
 
-      <!-- SLIDE 2 -->
-      <div class="deck-slide" data-slide="2">
-        <div class="slide-badge">COMPANY PROFILE & FINANCIALS</div>
-        <h2 class="slide-title">Illumina Corporate Overview & Operating Model</h2>
-        <div class="slide-grid-2">
-          <div class="slide-box">
-            <h3><i data-lucide="dna"></i> Core Technology Pillars</h3>
-            <ul>
-              <li><strong>Consumables Engine:</strong> High-margin recurring reagents & diagnostic kits.</li>
-              <li><strong>NGS Dominance:</strong> NovaSeq X Series flagship instrument fleet.</li>
-              <li><strong>Clinical Acceleration:</strong> +20% ROW growth in oncology & reproductive diagnostics.</li>
-              <li><strong>Proteomics Integration:</strong> SomaLogic multiomics pipeline consolidation.</li>
-            </ul>
-          </div>
-          <div class="slide-box">
-            <h3><i data-lucide="trending-up"></i> FY2026 Financial Highlights</h3>
-            <ul>
-              <li><strong>Q2 2026 Revenue:</strong> $1.159B (+9.5% YoY, +8.1% ROW organic).</li>
-              <li><strong>Operating Margin:</strong> Expanded to 22.5% in Q2, targeting 23.6% for FY26.</li>
-              <li><strong>Capital Allocation:</strong> $1.5B Share Buyback authorization.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+              <!-- Slide 5 -->
+              <div class="hero-carousel-slide">
+                <img src="assets/hero_5.jpg" alt="Certificate & Fellowship Convocation" class="img-pos-upper">
+                <div class="hero-glass-overlay">
+                  <span class="overlay-chip"><i data-lucide="check-circle-2"></i> Verified Portfolios</span>
+                  <h3 class="overlay-title">Project Portfolio Convocations</h3>
+                  <p class="overlay-subtitle">Students graduating with living digital project portfolios & certificates.</p>
+                </div>
+              </div>
+            </div>
 
-      <!-- SLIDE 3 -->
-      <div class="deck-slide" data-slide="3">
-        <div class="slide-badge">HCLTECH AI CAPABILITIES</div>
-        <h2 class="slide-title">HCLTech AI & Data Engineering Powerhouse</h2>
-        <div class="slide-grid-3">
-          <div class="slide-box">
-            <h3>HCLTech AI Force™</h3>
-            <p>GenAI & Agentic Automation for SDLC, Data.Dev SQL modernization, and Data.Ops pipeline monitoring.</p>
-          </div>
-          <div class="slide-box">
-            <h3>HCLTech AI Foundry</h3>
-            <p>Managed AI scaling ecosystem offering 5x value stream speed and 87.5% faster compliance workflows.</p>
-          </div>
-          <div class="slide-box">
-            <h3>HCLTech VisionX</h3>
-            <p>Multimodal Edge AI with 60+ pre-built models for real-time instrument telemetry and hazard monitoring.</p>
-          </div>
-        </div>
-      </div>
+            <!-- Controls -->
+            <button class="carousel-btn prev-btn" id="heroPrevBtn" onclick="changeHeroSlide(-1)" aria-label="Previous Slide">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="carousel-btn next-btn" id="heroNextBtn" onclick="changeHeroSlide(1)" aria-label="Next Slide">
+              <i data-lucide="chevron-right"></i>
+            </button>
 
-      <!-- SLIDE 4 -->
-      <div class="deck-slide" data-slide="4">
-        <div class="slide-badge">STRATEGIC OPPORTUNITY MAPPING</div>
-        <h2 class="slide-title">7 Strategic Transformation Plays</h2>
-        <div class="slide-plays-summary">
-          <div class="s-play-item"><strong>Play A:</strong> Cloud & Lakehouse Modernization for NGS & SomaLogic multiomics</div>
-          <div class="s-play-item"><strong>Play B:</strong> BioInsights AI/MLOps Platform for Billion Cell Atlas biopharma APIs</div>
-          <div class="s-play-item"><strong>Play C:</strong> Clinical & GxP LIMS/EHR Digital Lab Integration for CMO Dr. Eric Green</div>
-          <div class="s-play-item"><strong>Play D:</strong> NovaSeq X IoT Telemetry & Predictive Operations (VisionX)</div>
-          <div class="s-play-item"><strong>Play E:</strong> SAP ERP & Quote-to-Cash Digital Core Modernization for CFO & CCO</div>
-          <div class="s-play-item"><strong>Play F:</strong> Zero-Trust & Geopolitical Data Localization (Rest of World vs. China)</div>
-        </div>
-      </div>
-
-      <!-- SLIDE 5 -->
-      <div class="deck-slide" data-slide="5">
-        <div class="slide-badge">ENGAGEMENT ROADMAP</div>
-        <h2 class="slide-title">Three Near-Term PoC Engagement Proposals</h2>
-        <div class="slide-grid-3">
-          <div class="poc-mini-card">
-            <h4>PoC 1: BioInsights MLOps Platform</h4>
-            <span class="p-target">Target: CTO Mark Field</span>
-            <p>6-week federated learning & secure API enclave for Billion Cell Atlas data monetization.</p>
-          </div>
-          <div class="poc-mini-card">
-            <h4>PoC 2: Clinical Lab Connector</h4>
-            <span class="p-target">Target: CMO Dr. Eric Green</span>
-            <p>Pre-validated GxP/EHR framework reducing lab onboarding from months to weeks.</p>
-          </div>
-          <div class="poc-mini-card">
-            <h4>PoC 3: Instrument Telemetry & IoT</h4>
-            <span class="p-target">Target: COO & CCO</span>
-            <p>Predictive maintenance dashboard cutting NovaSeq fleet downtime by 40%.</p>
+            <!-- Dots -->
+            <div class="carousel-dots" id="heroCarouselDots">
+              <span class="dot active" onclick="setHeroSlide(0)"></span>
+              <span class="dot" onclick="setHeroSlide(1)"></span>
+              <span class="dot" onclick="setHeroSlide(2)"></span>
+              <span class="dot" onclick="setHeroSlide(3)"></span>
+              <span class="dot" onclick="setHeroSlide(4)"></span>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Presentation Deck Controls -->
-    <div class="deck-nav-bar">
-      <button class="btn-deck-nav" id="prevSlideBtn" onclick="changeSlide(-1)">
-        <i data-lucide="chevron-left"></i> Previous Slide
-      </button>
-      <div class="deck-dots" id="deckDots">
-        <span class="dot active" onclick="goToSlide(1)"></span>
-        <span class="dot" onclick="goToSlide(2)"></span>
-        <span class="dot" onclick="goToSlide(3)"></span>
-        <span class="dot" onclick="goToSlide(4)"></span>
-        <span class="dot" onclick="goToSlide(5)"></span>
+  <!-- ==========================================================================
+       VENN DIAGRAM SET THEORY SECTION ("WHAT WE DELIVER" - PAGE 2)
+       ========================================================================== -->
+  <section class="venn-section section-padding section-light alt-bg" id="methodology">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i data-lucide="pie-chart"></i> The WhySchool Set Theory Model</div>
+        <h2 class="section-title">What We <span class="orange-text">Deliver</span></h2>
+        <p class="section-subtitle">
+          Our core ecosystem operates at the intersection of three fundamental pillars: Market-Ready Hard Skills, Leadership Soft Skills, and Global Exposure.
+        </p>
       </div>
-      <button class="btn-deck-nav" id="nextSlideBtn" onclick="changeSlide(1)">
-        Next Slide <i data-lucide="chevron-right"></i>
-      </button>
+
+      <div class="venn-grid">
+        <!-- Left: Interactive Venn Diagram SVG -->
+        <div class="venn-visual-container">
+          <div class="venn-diagram-wrapper">
+            <svg viewBox="0 0 600 520" class="venn-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Gradient for Circle A -->
+                <radialGradient id="gradA" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#FF6500" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#FF6500" stop-opacity="0.1"/>
+                </radialGradient>
+                <!-- Gradient for Circle B -->
+                <radialGradient id="gradB" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0.1"/>
+                </radialGradient>
+                <!-- Gradient for Circle C -->
+                <radialGradient id="gradC" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.1"/>
+                </radialGradient>
+                <!-- Intersection Glow -->
+                <radialGradient id="gradIntersection" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#FF6500" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FF6500" stop-opacity="0.5"/>
+                </radialGradient>
+                <!-- Arrow Marker -->
+                <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#FF6500" />
+                </marker>
+              </defs>
+
+              <!-- Circle A: Market-Ready Skills -->
+              <circle cx="230" cy="220" r="105" fill="url(#gradA)" stroke="#FF6500" stroke-width="2.5" class="venn-circle circle-a"/>
+              
+              <!-- Circle B: Building Soft Skills -->
+              <circle cx="370" cy="220" r="105" fill="url(#gradB)" stroke="#0EA5E9" stroke-width="2.5" class="venn-circle circle-b"/>
+              
+              <!-- Circle C: National & International Exposure -->
+              <circle cx="300" cy="325" r="105" fill="url(#gradC)" stroke="#F59E0B" stroke-width="2.5" class="venn-circle circle-c"/>
+
+              <!-- Central Intersection Glow Circle -->
+              <circle cx="300" cy="255" r="28" fill="url(#gradIntersection)" class="venn-center-glow"/>
+
+              <!-- Pointer Arrow from Center Intersection to Callout -->
+              <path d="M 300 255 Q 320 135 430 75" fill="none" stroke="#FF6500" stroke-width="2.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+            </svg>
+
+            <!-- Overlay Labels on Venn Diagram -->
+            <div class="venn-overlay-label label-a" style="top: 18%; left: 8%;">
+              <i data-lucide="cpu"></i> Market-Ready Skills
+            </div>
+            
+            <div class="venn-overlay-label label-b" style="top: 48%; right: 4%;">
+              <i data-lucide="message-square"></i> Building Soft Skills
+            </div>
+
+            <div class="venn-overlay-label label-c" style="bottom: 5%; left: 50%; transform: translateX(-50%);">
+              <i data-lucide="globe"></i> National & International Exposure
+            </div>
+
+            <!-- Humanized Intersection Callout Card -->
+            <div class="venn-deliver-callout">
+              <div class="callout-header">
+                <i data-lucide="target"></i>
+                <span>WHERE IT ALL COMES TOGETHER</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 3 Pillar Details + Intersection Summary -->
+        <div class="venn-details-column">
+          <!-- Pillar 1 Card -->
+          <div class="venn-pillar-card pillar-a">
+            <div class="pillar-icon"><i data-lucide="cpu"></i></div>
+            <div class="pillar-content">
+              <span class="pillar-tag tag-a">SET 01</span>
+              <h3 class="pillar-title">Market-Ready Hard Skills</h3>
+              <p class="pillar-desc">
+                Applied Generative AI, Robotics engineering, financial modeling, 3D additive design, and real-world project prototyping.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 2 Card -->
+          <div class="venn-pillar-card pillar-b">
+            <div class="pillar-icon"><i data-lucide="message-square"></i></div>
+            <div class="pillar-content">
+              <span class="pillar-tag tag-b">SET 02</span>
+              <h3 class="pillar-title">Building Soft Skills & EQ</h3>
+              <p class="pillar-desc">
+                Executive voice, mental resilience, high-stakes negotiation, emotional self-regulation, and active team leadership.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 3 Card -->
+          <div class="venn-pillar-card pillar-c">
+            <div class="pillar-icon"><i data-lucide="globe"></i></div>
+            <div class="pillar-content">
+              <span class="pillar-tag tag-c">SET 03</span>
+              <h3 class="pillar-title">National & International Exposure</h3>
+              <p class="pillar-desc">
+                Global research fellowships, patent filing mentorship, corporate co-op programs, and angel investor pitch summits.
+              </p>
+            </div>
+          </div>
+
+          <!-- Central Intersection Card: WE DELIVER -->
+          <div class="venn-intersection-card">
+            <div class="intersection-header">
+              <i data-lucide="target" class="orange-text"></i>
+              <h3>The Intersection: What We Deliver</h3>
+            </div>
+            <p>
+              By fusing <strong>Market-Ready Skills</strong>, <strong>Soft Skill Leadership</strong>, and <strong>Global Exposure</strong>, WhySchool. delivers graduates who don't just pass exams—they found ventures, author research, and lead the future.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PHILOSOPHY SECTION ("WHY BEYOND CURRICULUM?")
+       ========================================================================== -->
+  <section class="philosophy-section section-padding section-light" id="philosophy">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i data-lucide="brain-circuit"></i> Core Educational Philosophy</div>
+        <h2 class="section-title">Why We Go <span class="orange-text">Beyond Curriculum</span></h2>
+        <p class="section-subtitle">
+          The 21st-century world rewards initiative, critical thinking, rapid adaptability, and creative synthesis—skills that standard rote syllabi never measure.
+        </p>
+      </div>
+
+      <!-- Philosophy Matrix Toggle -->
+      <div class="philosophy-toggle-wrapper">
+        <div class="philosophy-toggle">
+          <button class="toggle-btn active" id="btnShiftView" onclick="setPhilosophyView('shift')">The Core Paradigm Shifts</button>
+          <button class="toggle-btn" id="btnCompareView" onclick="setPhilosophyView('compare')">Traditional vs. WhySchool Ecosystem</button>
+        </div>
+      </div>
+
+      <!-- View 1: Paradigm Shifts -->
+      <div class="philosophy-grid" id="philosophyShiftGrid">
+        <div class="philosophy-card">
+          <div class="philosophy-card-top">
+            <div class="philosophy-icon"><i data-lucide="cpu"></i></div>
+            <h3 class="philosophy-title">Rote Testing ➔ Applied Mastery</h3>
+            <p class="philosophy-desc">
+              Instead of memorizing static textbook answers, students build functional AI models, engineer robotics, and execute physical prototyping.
+            </p>
+          </div>
+          <span class="shift-tag"><i data-lucide="arrow-right"></i> Future-Proof Tech Skills</span>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="philosophy-card-top">
+            <div class="philosophy-icon"><i data-lucide="rocket"></i></div>
+            <h3 class="philosophy-title">Isolated Theory ➔ Venture Creation</h3>
+            <p class="philosophy-desc">
+              Students don't just study economics; they launch real micro-ventures, pitch to angel investors, and handle cap-tables in high school and college.
+            </p>
+          </div>
+          <span class="shift-tag"><i data-lucide="arrow-right"></i> Financial & Founder Mindset</span>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="philosophy-card-top">
+            <div class="philosophy-icon"><i data-lucide="heart-handshake"></i></div>
+            <h3 class="philosophy-title">Marks Only ➔ Emotional Intelligence</h3>
+            <p class="philosophy-desc">
+              Developing executive presence, mental resilience, ethical decision-making, and high-impact negotiation alongside academic excellence.
+            </p>
+          </div>
+          <span class="shift-tag"><i data-lucide="arrow-right"></i> Holistic Human Growth</span>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="philosophy-card-top">
+            <div class="philosophy-icon"><i data-lucide="award"></i></div>
+            <h3 class="philosophy-title">Paper Diplomas ➔ Living Portfolios</h3>
+            <p class="philosophy-desc">
+              Students graduate with verified digital project portfolios, filed patent applications, and live industry co-op experience.
+            </p>
+          </div>
+          <span class="shift-tag"><i data-lucide="arrow-right"></i> Unmatched College & Job Advantage</span>
+        </div>
+      </div>
+
+      <!-- View 2: Detailed Comparison Table (Hidden by default) -->
+      <div class="comparison-container" id="philosophyCompareTable" style="display: none;">
+        <div class="interactive-widget-box">
+          <table style="width: 100%; border-collapse: collapse; text-align: left;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-orange); color: var(--text-primary);">
+                <th style="padding: 1.2rem; font-size: 1.1rem; width: 30%;">Learning Dimension</th>
+                <th style="padding: 1.2rem; font-size: 1.1rem; width: 35%; color: var(--text-muted);">Standard Curriculum Approach</th>
+                <th style="padding: 1.2rem; font-size: 1.1rem; width: 35%; color: var(--orange-primary);">WhySchool. Beyond Curriculum Ecosystem</th>
+              </tr>
+            </thead>
+            <tbody style="color: var(--text-secondary);">
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                <td style="padding: 1.2rem; font-weight: 700;">Problem Solving</td>
+                <td style="padding: 1.2rem;">Single correct answers from chapter end questions.</td>
+                <td style="padding: 1.2rem; color: #FFFFFF; font-weight: 600;">Open-ended real-world challenges with industry mentors.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                <td style="padding: 1.2rem; font-weight: 700;">Technology Integration</td>
+                <td style="padding: 1.2rem;">Basic computer literacy and generic coding exercises.</td>
+                <td style="padding: 1.2rem; color: #FFFFFF; font-weight: 600;">Generative AI engineering, robotics, and physical computing pods.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                <td style="padding: 1.2rem; font-weight: 700;">Evaluation Metric</td>
+                <td style="padding: 1.2rem;">Standardized timed written exam scores.</td>
+                <td style="padding: 1.2rem; color: #FFFFFF; font-weight: 600;">Multi-dimensional verified project portfolios & live pitches.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                <td style="padding: 1.2rem; font-weight: 700;">Career & Industry Exposure</td>
+                <td style="padding: 1.2rem;">Occasional guest lectures or annual career fairs.</td>
+                <td style="padding: 1.2rem; color: #FFFFFF; font-weight: 600;">Direct corporate co-op fellowships, patent filings, and seed grants.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PARTNER INSTITUTIONS SECTION
+       ========================================================================== -->
+  <section class="partners-section section-padding" id="partners">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i data-lucide="building-2"></i> Trusted B2B Network</div>
+        <h2 class="section-title">Our Partner <span class="orange-text">Institutions</span></h2>
+        <p class="section-subtitle">
+          In under 10 months since inception, premier B2B educational institutions and top brands trust WhySchool. to power their beyond-curriculum ecosystems.
+        </p>
+      </div>
+
+      <div class="partner-logos-grid">
+        <!-- Partner 1: IIT Bhubaneswar -->
+        <div class="partner-logo-card">
+          <div class="partner-logo-box">
+            <img src="assets/logos/iit_bhubaneswar.jpg" alt="IIT Bhubaneswar" class="partner-logo-img">
+          </div>
+          <div class="partner-logo-info">
+            <span class="partner-logo-badge">Institute of National Importance</span>
+            <h3 class="partner-logo-title">IIT Bhubaneswar</h3>
+          </div>
+        </div>
+
+        <!-- Partner 2: KIIT University -->
+        <div class="partner-logo-card">
+          <div class="partner-logo-box">
+            <img src="assets/logos/kiit.png" alt="KIIT University" class="partner-logo-img">
+          </div>
+          <div class="partner-logo-info">
+            <span class="partner-logo-badge">Deemed University & Innovation Hub</span>
+            <h3 class="partner-logo-title">KIIT University</h3>
+          </div>
+        </div>
+
+        <!-- Partner 3: SAI International -->
+        <div class="partner-logo-card">
+          <div class="partner-logo-box">
+            <img src="assets/logos/sai_international.png" alt="SAI International School" class="partner-logo-img">
+          </div>
+          <div class="partner-logo-info">
+            <span class="partner-logo-badge">Premier K-12 School</span>
+            <h3 class="partner-logo-title">SAI International School</h3>
+          </div>
+        </div>
+
+        <!-- Partner 4: Regional College of Management (RCM) -->
+        <div class="partner-logo-card">
+          <div class="partner-logo-box">
+            <img src="assets/logos/rcm.jpg" alt="Regional College of Management (RCM)" class="partner-logo-img">
+          </div>
+          <div class="partner-logo-info">
+            <span class="partner-logo-badge">Higher Education Institute</span>
+            <h3 class="partner-logo-title">Regional College of Management (RCM)</h3>
+          </div>
+        </div>
+
+        <!-- Partner 5: Srusti Academy -->
+        <div class="partner-logo-card">
+          <div class="partner-logo-box">
+            <img src="assets/logos/srusti.jpg" alt="Srusti Academy of Management and Technology" class="partner-logo-img">
+          </div>
+          <div class="partner-logo-info">
+            <span class="partner-logo-badge">Management & Tech Campus</span>
+            <h3 class="partner-logo-title">Srusti Academy of Management & Technology</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PROGRAMS FOR SCHOOLS (K-12)
+       ========================================================================== -->
+  <section class="k12-section section-padding section-light alt-bg" id="k12-programs">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i data-lucide="school"></i> K-12 Institution Ecosystem</div>
+        <h2 class="section-title">Beyond Curriculum Programs for <span class="orange-text">K-12 Schools</span></h2>
+        <p class="section-subtitle">
+          Turn your school campus into a hub of innovation. Grade-agnostic experiential pods engineered to empower students with real-world skills.
+        </p>
+      </div>
+
+      <div class="k12-grid">
+        <!-- Pod 1: Young Founders Pod -->
+        <div class="k12-card">
+          <div>
+            <div class="k12-pod-header">
+              <div class="k12-pod-icon"><i data-lucide="rocket" class="orange-text"></i></div>
+              <span class="pod-badge">POD 01</span>
+            </div>
+            <h3 class="k12-card-title">Young Founders Pod</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5;">
+              Fostering an entrepreneurial mindset. Students learn micro-business ideation, product prototyping, financial literacy, cap-tables, and pitch decks.
+            </p>
+            <ul class="k12-features">
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> Micro-Business Ideation & Prototyping</li>
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> Financial Literacy & Equity Cap-Tables</li>
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> Angel Pitch & Venture Demo Days</li>
+            </ul>
+          </div>
+          <button class="btn btn-outline-orange btn-sm" onclick="openInquiryModal('Young Founders Pod')">Request Pod Details</button>
+        </div>
+
+        <!-- Pod 2: Leadership Pod -->
+        <div class="k12-card">
+          <div>
+            <div class="k12-pod-header">
+              <div class="k12-pod-icon"><i data-lucide="award" class="orange-text"></i></div>
+              <span class="pod-badge">POD 02</span>
+            </div>
+            <h3 class="k12-card-title">Leadership Pod</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5;">
+              Empowering students with effective communication, executive presence, public speaking, active listening, and confidence-building skills.
+            </p>
+            <ul class="k12-features">
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> Public Speaking & Debate Mastery</li>
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> Executive Presence & Confidence Building</li>
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> Conflict Resolution & Team Dynamics</li>
+            </ul>
+          </div>
+          <button class="btn btn-outline-orange btn-sm" onclick="openInquiryModal('Leadership Pod')">Request Pod Details</button>
+        </div>
+
+        <!-- Pod 3: Future Skills Pod -->
+        <div class="k12-card">
+          <div>
+            <div class="k12-pod-header">
+              <div class="k12-pod-icon"><i data-lucide="cpu" class="orange-text"></i></div>
+              <span class="pod-badge">POD 03</span>
+            </div>
+            <h3 class="k12-card-title">Future Skills Pod</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5;">
+              Mastering next-generation technology. Students learn Artificial Intelligence, Autonomous Robotics, coding, physical computing, and related skills.
+            </p>
+            <ul class="k12-features">
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> Generative AI & Machine Learning</li>
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> Autonomous Robotics & Rover Coding</li>
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> 3D Prototyping & Spatial Tech</li>
+            </ul>
+          </div>
+          <button class="btn btn-outline-orange btn-sm" onclick="openInquiryModal('Future Skills Pod')">Request Pod Details</button>
+        </div>
+
+        <!-- Pod 4: Career Counseling Pod -->
+        <div class="k12-card">
+          <div>
+            <div class="k12-pod-header">
+              <div class="k12-pod-icon"><i data-lucide="compass" class="orange-text"></i></div>
+              <span class="pod-badge">POD 04</span>
+            </div>
+            <h3 class="k12-card-title">Career Counseling Pod</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5;">
+              Guiding students through personalized career roadmaps, stream selection, portfolio building, university admissions, and industry exposure.
+            </p>
+            <ul class="k12-features">
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> Personalized Career & Stream Mapping</li>
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> Verified Digital Portfolio Creation</li>
+              <li><i data-lucide="check" style="color: var(--orange-primary);"></i> University & Global Mentorship Alignment</li>
+            </ul>
+          </div>
+          <button class="btn btn-outline-orange btn-sm" onclick="openInquiryModal('Career Counseling Pod')">Request Pod Details</button>
+        </div>
+      </div>
+
+      <!-- Interactive K-12 Program Builder Widget -->
+      <div class="interactive-widget-box">
+        <div class="widget-header">
+          <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem;">
+            <i data-lucide="sliders" class="orange-text"></i> Interactive K-12 Program Builder
+          </h3>
+          <p style="color: var(--text-muted);">Customize a Beyond Curriculum schedule blueprint for your school campus in real-time.</p>
+        </div>
+
+        <div class="widget-grid">
+          <div class="builder-controls">
+            <div class="form-group">
+              <label class="form-label">Program Focus Area:</label>
+              <select class="form-select" id="builderGradeSelect" onchange="updateK12Builder()">
+                <option value="primary">Young Founders & Entrepreneurship</option>
+                <option value="middle" selected>Leadership & Confidence Building</option>
+                <option value="senior">Future Skills (AI & Robotics)</option>
+                <option value="all">Full K-12 Campus Ecosystem (All 4 Pods)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Student Capacity:</label>
+              <select class="form-select" id="builderStudentSelect" onchange="updateK12Builder()">
+                <option value="100">100 - 300 Enrolled Students</option>
+                <option value="500" selected>300 - 800 Enrolled Students</option>
+                <option value="1500">800 - 2,000+ Enrolled Students</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Select Desired Pods:</label>
+              <div class="checkbox-group">
+                <label class="custom-checkbox">
+                  <input type="checkbox" checked id="chkAi" onchange="updateK12Builder()"> Young Founders Pod
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" checked id="chkVenture" onchange="updateK12Builder()"> Leadership Pod
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" checked id="chkBio" onchange="updateK12Builder()"> Future Skills Pod
+                </label>
+                <label class="custom-checkbox">
+                  <input type="checkbox" checked id="chkDesign" onchange="updateK12Builder()"> Career Counseling Pod
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="builder-preview-box">
+            <div>
+              <div class="preview-title">
+                <i data-lucide="file-text"></i> Customized Blueprint Preview
+              </div>
+              <ul class="preview-list" id="builderPreviewList">
+                <!-- Dynamically updated by JS -->
+              </ul>
+            </div>
+            
+            <button class="btn btn-primary" onclick="openInquiryModal('Custom K12 Blueprint')">
+              <i data-lucide="download"></i> Export Full School Implementation Proposal
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PROGRAMS FOR COLLEGES
+       ========================================================================== -->
+  <section class="college-section section-padding section-light" id="college-programs">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i data-lucide="graduation-cap"></i> Higher Education Ecosystem</div>
+        <h2 class="section-title">Beyond Curriculum for <span class="orange-text">Colleges & Universities</span></h2>
+        <p class="section-subtitle">
+          We design courses that make students market-ready, nurture student-led ventures to create new market opportunities, and instill executive soft skills for career excellence.
+        </p>
+      </div>
+
+      <!-- Real Campus Session Showcase Banner -->
+      <div class="college-showcase-banner">
+        <div class="college-showcase-img-box">
+          <img src="assets/college_workshop.jpg" alt="WhySchool Live University Masterclass Cohort">
+          <div class="showcase-img-overlay">
+            <span class="showcase-chip"><i data-lucide="video"></i> Live Campus Masterclass</span>
+            <span class="showcase-caption">Interactive Hard & Soft Skill Workshop at Partner University Campus</span>
+          </div>
+        </div>
+        <div class="college-showcase-info">
+          <span class="college-badge-tag"><i data-lucide="zap" class="orange-text"></i> Real-World Campus Impact</span>
+          <h3>Transforming University Classrooms into <span class="orange-text">Venture & Skill Incubators</span></h3>
+          <p>
+            WhySchool conducts intensive live masterclasses, market-ready technical bootcamps, and executive soft skill labs directly inside university campuses, bridging academic degree syllabi with industry demands.
+          </p>
+          <div class="college-highlights-row">
+            <span class="highlight-chip"><i data-lucide="check-circle" class="orange-text"></i> Industry-Designed Courses</span>
+            <span class="highlight-chip"><i data-lucide="check-circle" class="orange-text"></i> Incubating Student Ventures</span>
+            <span class="highlight-chip"><i data-lucide="check-circle" class="orange-text"></i> Executive Soft Skill Labs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Core Pillars Grid (Concise & Direct) -->
+      <div class="college-grid">
+        <!-- Pillar 1: Market-Ready Hard Skills -->
+        <div class="college-card">
+          <div>
+            <div class="college-card-header">
+              <div class="college-card-icon"><i data-lucide="cpu" class="orange-text"></i></div>
+              <span class="college-card-badge">ENGINEERING & MANAGEMENT</span>
+            </div>
+            <h3 class="college-card-title">Market-Ready Hard Skills</h3>
+            <p class="college-card-desc">
+              We design practical, industry-aligned courses for Engineering and Management colleges to make students market-ready professionals.
+            </p>
+            <ul class="college-feature-list">
+              <li><i data-lucide="check" class="orange-text"></i> <strong>Engineering:</strong> Applied AI, Robotics & System Prototyping</li>
+              <li><i data-lucide="check" class="orange-text"></i> <strong>Management:</strong> Financial Valuation, Growth Analytics & Strategy</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Venture Building -->
+        <div class="college-card">
+          <div>
+            <div class="college-card-header">
+              <div class="college-card-icon"><i data-lucide="rocket" class="orange-text"></i></div>
+              <span class="college-card-badge">STUDENT FOUNDERS</span>
+            </div>
+            <h3 class="college-card-title">Venture Building</h3>
+            <p class="college-card-desc">
+              We help students incubate and build their own ventures, enabling them to create new market opportunities instead of relying only on traditional jobs.
+            </p>
+            <ul class="college-feature-list">
+              <li><i data-lucide="check" class="orange-text"></i> Business Ideation, Prototyping & Cap-Table Advisory</li>
+              <li><i data-lucide="check" class="orange-text"></i> Investor Pitch Readiness & Product-Market Fit Validation</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Soft Skills & Leadership -->
+        <div class="college-card">
+          <div>
+            <div class="college-card-header">
+              <div class="college-card-icon"><i data-lucide="message-square" class="orange-text"></i></div>
+              <span class="college-card-badge">EXECUTIVE LEADERSHIP</span>
+            </div>
+            <h3 class="college-card-title">Soft Skills & Leadership</h3>
+            <p class="college-card-desc">
+              We train students in high-impact communication, public speaking, negotiation, and confidence to become effective leaders.
+            </p>
+            <ul class="college-feature-list">
+              <li><i data-lucide="check" class="orange-text"></i> Executive Presence, Public Speaking & Presentation Voice</li>
+              <li><i data-lucide="check" class="orange-text"></i> Workplace Ethics, Negotiation & Team Leadership</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Corporate & Industry Exposure -->
+        <div class="college-card">
+          <div>
+            <div class="college-card-header">
+              <div class="college-card-icon"><i data-lucide="briefcase" class="orange-text"></i></div>
+              <span class="college-card-badge">MARKET INTEGRATION</span>
+            </div>
+            <h3 class="college-card-title">Corporate & Industry Exposure</h3>
+            <p class="college-card-desc">
+              We connect students directly with real-world corporate projects and industry mentorship to build living proof-of-work portfolios.
+            </p>
+            <ul class="college-feature-list">
+              <li><i data-lucide="check" class="orange-text"></i> Live Corporate Project Capstones & Executive Mentorship</li>
+              <li><i data-lucide="check" class="orange-text"></i> Verified Digital Project Portfolios for Graduates</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain Specialization Focus: Engineering vs. Management Colleges -->
+      <div class="college-domain-box">
+        <div class="domain-header">
+          <h3><i data-lucide="layers" class="orange-text"></i> Hard Skills Domain Specialization</h3>
+          <p>Curriculum modules engineered specifically for Engineering and Management college cohorts.</p>
+        </div>
+
+        <div class="domain-grid">
+          <!-- Engineering Domain -->
+          <div class="domain-card domain-engineering">
+            <div class="domain-badge"><i data-lucide="terminal"></i> FOR ENGINEERING COLLEGES</div>
+            <h4>Engineering & Tech Curriculum</h4>
+            <div class="domain-tags">
+              <span class="domain-tag"><i data-lucide="cpu"></i> Applied AI & LLM Systems</span>
+              <span class="domain-tag"><i data-lucide="bot"></i> Autonomous Robotics</span>
+              <span class="domain-tag"><i data-lucide="layers"></i> Cloud & Microservices</span>
+              <span class="domain-tag"><i data-lucide="box"></i> 3D CAD & Prototyping</span>
+              <span class="domain-tag"><i data-lucide="shield"></i> Cyber & System Security</span>
+              <span class="domain-tag"><i data-lucide="git-branch"></i> DevOps & CI/CD Pipelines</span>
+            </div>
+          </div>
+
+          <!-- Management Domain -->
+          <div class="domain-card domain-management">
+            <div class="domain-badge"><i data-lucide="trending-up"></i> FOR MANAGEMENT COLLEGES</div>
+            <h4>Management & Business Curriculum</h4>
+            <div class="domain-tags">
+              <span class="domain-tag"><i data-lucide="bar-chart-3"></i> Financial Modeling & LBOs</span>
+              <span class="domain-tag"><i data-lucide="pie-chart"></i> Valuation & Cap Tables</span>
+              <span class="domain-tag"><i data-lucide="target"></i> Growth Hacking & Funnels</span>
+              <span class="domain-tag"><i data-lucide="briefcase"></i> Product Management</span>
+              <span class="domain-tag"><i data-lucide="handshake"></i> Corporate Negotiation</span>
+              <span class="domain-tag"><i data-lucide="search"></i> Market Intelligence</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="college-actions">
+          <button class="btn btn-primary" onclick="openInquiryModal('College Incubator & Course Setup')">
+            <i data-lucide="building"></i> Setup University Courses & Hatchery
+          </button>
+          <button class="btn btn-secondary" onclick="openInquiryModal('College Partnership Deck')">
+            <i data-lucide="file-text"></i> Download College Partnership Deck
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE IMPACT & ROI CALCULATOR
+       ========================================================================== -->
+  <section class="calculator-section section-padding" id="impact-calculator">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge"><i data-lucide="calculator"></i> Institutional Impact Projection</div>
+        <h2 class="section-title">Calculate Your Institution's <span class="orange-text">Beyond Curriculum Impact</span></h2>
+        <p class="section-subtitle">
+          Estimate student portfolio output, competition readiness, and national innovation index lift.
+        </p>
+      </div>
+
+      <div class="calc-box">
+        <div class="calc-inputs">
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Total Enrolled Students:</span>
+              <span class="slider-value" id="valStudents">500 Students</span>
+            </div>
+            <input type="range" min="50" max="5000" step="50" value="500" class="range-slider" id="sliderStudents" oninput="calculateROI()">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Weekly Beyond-Curriculum Hours:</span>
+              <span class="slider-value" id="valHours">4 Hours / Week</span>
+            </div>
+            <input type="range" min="2" max="15" step="1" value="4" class="range-slider" id="sliderHours" oninput="calculateROI()">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Program Duration:</span>
+              <span class="slider-value" id="valDuration">1 Academic Year</span>
+            </div>
+            <input type="range" min="1" max="4" step="1" value="1" class="range-slider" id="sliderDuration" oninput="calculateROI()">
+          </div>
+        </div>
+
+        <div class="calc-results-box">
+          <div>
+            <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem; color: #FFFFFF;">
+              Projected 1-Year Outcomes
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Based on deployment data across 180+ partner campuses.</p>
+            
+            <div class="results-grid">
+              <div class="result-card">
+                <div class="result-num" id="resPortfolios">350+</div>
+                <div class="result-lbl">Verified Projects Built</div>
+              </div>
+              <div class="result-card">
+                <div class="result-num" id="resPatents">12</div>
+                <div class="result-lbl">Patents & Papers Filed</div>
+              </div>
+              <div class="result-card">
+                <div class="result-num" id="resStartups">8</div>
+                <div class="result-lbl">Incubated Micro-Ventures</div>
+              </div>
+              <div class="result-card">
+                <div class="result-num" id="resSkillLift">+94%</div>
+                <div class="result-lbl">Innovation Skill Index Lift</div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" onclick="openInquiryModal('ROI Impact Report')">
+            <i data-lucide="send"></i> Receive Detailed Institutional ROI Report
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INSTITUTIONAL CALL TO ACTION
+       ========================================================================== -->
+  <section class="cta-section section-padding section-light alt-bg">
+    <div class="container">
+      <div class="cta-banner" style="margin-top: 0;">
+        <h2>Transform Your Institution Today</h2>
+        <p>Empower your students beyond the standard curriculum with WhySchool.</p>
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 1.8rem;">
+          <button class="btn btn-primary btn-lg" onclick="openInquiryModal('Campus Audit Request')">
+            <i data-lucide="calendar"></i> Schedule Campus Presentation
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo">
+            <span class="logo-why">Why</span><span class="logo-school">School</span><span class="logo-dot"></span>
+          </a>
+          <p>
+            The Ultimate Beyond Curriculum Ecosystem.<br>
+            Empowering K-12 schools and higher education institutions with real-world experiential pods, AI labs, and venture incubators.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Ecosystem</h4>
+          <ul class="footer-links">
+            <li><a href="#philosophy">Core Philosophy</a></li>
+            <li><a href="#partners">Partner Institutions</a></li>
+            <li><a href="#impact-calculator">ROI Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Programs</h4>
+          <ul class="footer-links">
+            <li><a href="#k12-programs">K-12 Primary Explorers</a></li>
+            <li><a href="#k12-programs">K-12 Middle Innovators</a></li>
+            <li><a href="#k12-programs">Senior Founders Studio</a></li>
+            <li><a href="#college-programs">College Venture Hatchery</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-column-title">Contact & Audit</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="openInquiryModal('Institutional Audit')">Book Institutional Audit</a></li>
+            <li><a href="#" onclick="openInquiryModal('Partner Inquiry')">Partner With Us</a></li>
+            <li><a href="#" onclick="openInquiryModal('Press')">Press & Media Kit</a></li>
+            <li><a href="#">privacy@whyschool.edu</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 WhySchool. All rights reserved. Beyond Curriculum Educational Ecosystem.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Institutional Accreditation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS & OVERLAYS
+       ========================================================================== -->
+       
+  <!-- Institutional Inquiry / Partnership Modal -->
+  <div class="modal-overlay" id="inquiryModal">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" onclick="closeInquiryModal()"><i data-lucide="x"></i></button>
+      <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem;" id="modalTitle">
+        Partner With WhySchool.
+      </h3>
+      <p style="color: var(--text-muted); margin-bottom: 1.8rem;" id="modalSubtitle">
+        Request a customized Beyond Curriculum proposal or schedule an on-site audit for your institution.
+      </p>
+
+      <form id="inquiryForm" onsubmit="handleInquirySubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Your Name & Title:</label>
+          <input type="text" class="form-input" required placeholder="e.g. Dr. Sarah Jenkins, Principal">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Institution Name:</label>
+          <input type="text" class="form-input" required placeholder="e.g. Saint Jude Global School / Stanford Univ">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Institution Type:</label>
+          <select class="form-select" id="modalInstType">
+            <option value="k12">K-12 School / Academy</option>
+            <option value="college">College / University</option>
+            <option value="research">Research Lab / Corporate Partner</option>
+            <option value="parent">Parent / Student Fellow</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Official Email Address:</label>
+          <input type="email" class="form-input" required placeholder="name@institution.edu">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">What is your primary goal?</label>
+          <textarea class="form-input" rows="3" placeholder="Tell us about your campus requirements, student strength, or preferred pod tracks..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+          <i data-lucide="send"></i> Submit Request
+        </button>
+      </form>
     </div>
   </div>
 
+  <!-- Track Detail Modal -->
+  <div class="modal-overlay" id="trackModal">
+    <div class="modal-content-box" style="max-width: 750px;">
+      <button class="modal-close-btn" onclick="closeTrackModal()"><i data-lucide="x"></i></button>
+      <div id="trackModalBody">
+        <!-- Content inserted dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Partner Case Study Modal -->
+  <div class="modal-overlay" id="partnerModal">
+    <div class="modal-content-box" style="max-width: 700px;">
+      <button class="modal-close-btn" onclick="closePartnerModal()"><i data-lucide="x"></i></button>
+      <div id="partnerModalBody">
+        <!-- Content inserted dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
   <script src="app.js"></script>
 </body>
 </html>
