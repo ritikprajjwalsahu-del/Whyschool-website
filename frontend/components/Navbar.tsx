@@ -22,7 +22,6 @@ export default function Navbar({ onOpenInquiryModal }: NavbarProps) {
 
   const navLinks = [
     { name: 'What We Deliver', href: '#methodology' },
-    { name: 'Philosophy', href: '#philosophy' },
     { name: 'Partner Institutions', href: '#partners' },
     { name: 'For K-12 Schools', href: '#k12-programs' },
     { name: 'For Colleges', href: '#college-programs' },

@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import VennSection from '@/components/VennSection';
-import PhilosophySection from '@/components/PhilosophySection';
 import PartnerInstitutions from '@/components/PartnerInstitutions';
 import K12ProgramsSection from '@/components/K12ProgramsSection';
 import CollegeProgramsSection from '@/components/CollegeProgramsSection';
@@ -33,7 +32,6 @@ export default function HomePage() {
       <main className="flex-1">
         <HeroSection onOpenInquiryModal={handleOpenModal} />
         <VennSection onOpenInquiryModal={handleOpenModal} />
-        <PhilosophySection onOpenInquiryModal={handleOpenModal} />
         <PartnerInstitutions onOpenInquiryModal={handleOpenModal} />
         <K12ProgramsSection onOpenInquiryModal={handleOpenModal} />
         <CollegeProgramsSection onOpenInquiryModal={handleOpenModal} />
