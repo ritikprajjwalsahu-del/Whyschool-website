@@ -7,7 +7,7 @@
     "dev:frontend": "cd frontend && npm run dev",
     "build:backend": "cd backend && npm run build",
     "build:frontend": "cd frontend && npm run build",
-    "build": "npm run build:backend && npm run build:frontend",
+    "build": "if [ -d \"frontend\" ]; then cd frontend && npm run build; else prisma generate && next build; fi",
     "start:backend": "cd backend && npm run start",
     "start:frontend": "cd frontend && npm run start"
   }
