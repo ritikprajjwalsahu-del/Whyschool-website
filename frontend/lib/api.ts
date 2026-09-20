@@ -8,6 +8,7 @@ export function getApiUrl(endpoint: string): string {
 export async function safeFetchJson(url: string, options: RequestInit = {}) {
   try {
     const res = await fetch(url, {
+      credentials: 'include', // Ensures HTTP-only authentication cookies are attached
       ...options,
       headers: {
         'Content-Type': 'application/json',

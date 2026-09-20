@@ -113,6 +113,15 @@ export async function logoutAdmin(req: Request, res: Response) {
   return res.status(200).json({ success: true, message: 'Logged out successfully.' });
 }
 
+export async function getAdminMe(req: Request, res: Response) {
+  const admin = (req as any).admin;
+  if (!admin) {
+    return res.status(401).json({ error: 'Unauthorized access.' });
+  }
+  return res.status(200).json({ success: true, user: admin });
+}
+
+
 export async function getInquiries(req: Request, res: Response) {
   try {
     const statusFilter = req.query.status as string;

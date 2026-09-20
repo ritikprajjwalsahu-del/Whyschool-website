@@ -41,7 +41,62 @@ export default function AdminDashboardPage() {
   const [statusFilter, setStatusFilter] = useState('ALL');
   const [selectedInquiry, setSelectedInquiry] = useState<Inquiry | null>(null);
   const [error, setError] = useState('');
+  const [sessionChecking, setSessionChecking] = useState(true);
   const router = useRouter();
+
+  // Inactivity timeout duration: 15 minutes
+  const INACTIVITY_LIMIT_MS = 15 * 60 * 1000;
+
+  // Initial session verification
+  useEffect(() => {
+    const verifySession = async () => {
+      try {
+        const apiUrl = getApiUrl('/api/admin/me');
+        const res = await safeFetchJson(apiUrl);
+        if (res.status === 401 || !res.ok) {
+          router.push('/admin/login?reason=session_expired');
+          return;
+        }
+        setSessionChecking(false);
+      } catch (e) {
+        router.push('/admin/login?reason=session_expired');
+      }
+    };
+    verifySession();
+  }, [router]);
+
+  // Inactivity timeout handler
+  useEffect(() => {
+    if (sessionChecking) return;
+
+    let timeoutId: NodeJS.Timeout;
+
+    const performAutoLogout = async () => {
+      try {
+        const apiUrl = getApiUrl('/api/admin/logout');
+        await safeFetchJson(apiUrl, { method: 'POST' });
+      } catch (err) {
+        console.error('Auto-logout request error:', err);
+      }
+      router.push('/admin/login?reason=timeout');
+    };
+
+    const resetTimer = () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(performAutoLogout, INACTIVITY_LIMIT_MS);
+    };
+
+    // User activity listeners
+    const activityEvents = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart'];
+    activityEvents.forEach((evt) => window.addEventListener(evt, resetTimer));
+
+    resetTimer();
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      activityEvents.forEach((evt) => window.removeEventListener(evt, resetTimer));
+    };
+  }, [sessionChecking, router]);
 
   const fetchInquiries = async () => {
     setLoading(true);
@@ -53,11 +108,13 @@ export default function AdminDashboardPage() {
       const apiUrl = getApiUrl(`/api/admin/inquiries?${query.toString()}`);
       const result = await safeFetchJson(apiUrl);
       if (result.status === 401) {
-        router.push('/admin/login');
+        router.push('/admin/login?reason=session_expired');
         return;
       }
-      if (result.ok && result.data.success) {
+      if (result.ok && result.data?.success) {
         setInquiries(result.data.data);
+      } else {
+        setError(result.data?.error || 'Failed to load inquiries.');
       }
     } catch (err: any) {
       setError('Failed to load inquiries.');
@@ -67,8 +124,10 @@ export default function AdminDashboardPage() {
   };
 
   useEffect(() => {
-    fetchInquiries();
-  }, [statusFilter]);
+    if (!sessionChecking) {
+      fetchInquiries();
+    }
+  }, [statusFilter, sessionChecking]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -82,6 +141,10 @@ export default function AdminDashboardPage() {
         method: 'PATCH',
         body: JSON.stringify({ status: newStatus }),
       });
+      if (result.status === 401) {
+        router.push('/admin/login?reason=session_expired');
+        return;
+      }
       if (result.ok) {
         setInquiries((prev) =>
           prev.map((item) => (item.id === id ? { ...item, status: newStatus as any } : item))
@@ -100,6 +163,10 @@ export default function AdminDashboardPage() {
     try {
       const apiUrl = getApiUrl(`/api/admin/inquiries/${id}`);
       const result = await safeFetchJson(apiUrl, { method: 'DELETE' });
+      if (result.status === 401) {
+        router.push('/admin/login?reason=session_expired');
+        return;
+      }
       if (result.ok) {
         setInquiries((prev) => prev.filter((item) => item.id !== id));
         if (selectedInquiry?.id === id) setSelectedInquiry(null);
@@ -114,6 +181,17 @@ export default function AdminDashboardPage() {
     await safeFetchJson(apiUrl, { method: 'POST' });
     router.push('/admin/login');
   };
+
+  if (sessionChecking) {
+    return (
+      <div className="min-h-screen bg-[#0A0E1A] text-white flex items-center justify-center font-sans">
+        <div className="flex flex-col items-center gap-3">
+          <RefreshCw size={28} className="animate-spin text-[#FF5722]" />
+          <p className="text-sm font-semibold text-slate-300">Verifying Admin Session...</p>
+        </div>
+      </div>
+    );
+  }
 
   const exportCSV = () => {
     if (inquiries.length === 0) return;

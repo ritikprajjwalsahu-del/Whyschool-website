@@ -2,6 +2,7 @@ import { Router } from 'express';
 import {
   loginAdmin,
   logoutAdmin,
+  getAdminMe,
   getInquiries,
   updateInquiryStatus,
   deleteInquiry,
@@ -12,6 +13,7 @@ const router = Router();
 
 router.post('/login', loginAdmin);
 router.post('/logout', logoutAdmin);
+router.get('/me', authenticateAdmin, getAdminMe);
 
 // Protected routes
 router.get('/inquiries', authenticateAdmin, getInquiries);
