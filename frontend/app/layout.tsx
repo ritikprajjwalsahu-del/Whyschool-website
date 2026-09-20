@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     'Education B2B Partner',
   ],
   authors: [{ name: 'WhySchool Ecosystem' }],
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.png',
+    apple: '/icon.jpg',
+  },
   openGraph: {
     title: 'WhySchool. | Building Young India Beyond Curriculums',
     description:
