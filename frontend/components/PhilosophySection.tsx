@@ -1,44 +1,78 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Compass, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { Compass, CheckCircle2, XCircle, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 
 interface PhilosophySectionProps {
-  onOpenInquiryModal: (type?: string) => void;
+  onOpenInquiryModal?: (type?: string) => void;
 }
 
 export default function PhilosophySection({ onOpenInquiryModal }: PhilosophySectionProps) {
+  const [activeTab, setActiveTab] = useState(0);
   const [showTable, setShowTable] = useState(false);
 
-  const comparisons = [
+  const transformations = [
     {
+      id: 'pillar-1',
+      title: 'Applied Mastery & Product Launches',
       traditional: 'Rote Memorization & Written Exams',
-      whyschool: 'Applied Mastery & Product Launches',
-      desc: 'Instead of memorizing definitions for tests, students build physical or digital solutions that solve actual market problems.',
+      tagline: 'From passive theory to tangible market-ready solutions',
+      desc: 'Instead of memorizing textbook definitions for written exams, students build physical hardware prototypes, software apps, and revenue-generating products.',
+      image: '/assets/hero_3.jpg',
+      badge: 'Execution-First Pedagogy',
+      stats: '100% Practical Build Rate',
     },
     {
-      traditional: 'Isolated Textbooks & Hypothetical Theory',
-      whyschool: 'Real-World Incubators & Venture Sprints',
-      desc: 'Theory is coupled with live execution, prototyping, customer feedback, and real-world deployment.',
+      id: 'pillar-2',
+      title: 'Real-World Incubators & Venture Sprints',
+      traditional: 'Isolated Textbooks & Hypothetical Scenarios',
+      tagline: 'Bridging classroom labs with live startup incubators',
+      desc: 'Theory is coupled with 72-hour hackathons, customer discovery sprints, live user testing, and direct feedback from seasoned corporate founders.',
+      image: '/assets/whyschool_college_hub.jpg',
+      badge: 'Incubator Network',
+      stats: '50+ Ventures Incubated',
     },
     {
-      traditional: 'Grade Points & Report Card Marks',
-      whyschool: 'Emotional Intelligence & Leadership Capabilities',
-      desc: 'Building resilience, public speaking, negotiation, crisis response, and high-performance team dynamics.',
+      id: 'pillar-3',
+      title: 'Emotional Intelligence & Leadership',
+      traditional: 'Grade Points & Paper Marksheets',
+      tagline: 'Building character, resilience, and executive presence',
+      desc: 'Nurturing public speaking, crisis management, high-stakes negotiation, ethical AI leadership, and high-performance team dynamics.',
+      image: '/assets/college_workshop.jpg',
+      badge: 'EQ & Leadership',
+      stats: 'High-Impact Skill Metrics',
     },
     {
-      traditional: 'Paper Diplomas & Passive Degrees',
-      whyschool: 'Living Digital Portfolios & Published IP',
-      desc: 'Students graduate with patent filings, working products, active Github repos, and verifiable startup achievements.',
+      id: 'pillar-4',
+      title: 'Living Portfolios & Published IP',
+      traditional: 'Paper Diplomas & Static Certificates',
+      tagline: 'Verifiable proof of capability, patents, and repositories',
+      desc: 'Students graduate with active GitHub repositories, published research papers, filed patents, and living digital portfolios that top recruiters seek.',
+      image: '/assets/whyschool_k12_lab.jpg',
+      badge: 'Verifiable IP & Proof',
+      stats: '15+ Patents & Research Papers',
     },
   ];
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveTab((prev) => (prev + 1) % transformations.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [transformations.length]);
+
+  const current = transformations[activeTab];
+
   return (
-    <section id="philosophy" className="py-20 md:py-28 bg-[#12151C] relative border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="philosophy" className="py-20 md:py-28 bg-[#12151C] relative border-t border-white/10 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#FF6500]/10 rounded-full blur-[160px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF6500]/15 border border-[#FF6500]/30 text-[#FF7A1A] text-xs font-bold uppercase tracking-wider">
             <Compass size={14} />
             <span>OUR CORE PHILOSOPHY</span>
@@ -47,42 +81,122 @@ export default function PhilosophySection({ onOpenInquiryModal }: PhilosophySect
             Shifting From <span className="text-slate-400 font-light">Information</span> To{' '}
             <span className="text-[#FF6500]">Transformation</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-300 text-base sm:text-lg">
             Traditional education measures memory. WhySchool measures execution capability.
           </p>
         </div>
 
-        {/* 2x2 Grid of Transformation Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {comparisons.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-[#181C26] border border-white/10 rounded-2xl p-6 hover:border-[#FF6500]/40 transition space-y-4 shadow-xl"
+        {/* Tab Navigation Pill Strip */}
+        <div className="flex items-center justify-center gap-2 flex-wrap mb-8">
+          {transformations.map((item, idx) => (
+            <button
+              key={item.id}
+              onClick={() => setActiveTab(idx)}
+              className={`py-2.5 px-4 sm:px-5 rounded-xl text-xs font-extrabold transition flex items-center gap-2 cursor-pointer border ${
+                activeTab === idx
+                  ? 'bg-[#FF6500] text-white border-[#FF6500] shadow-lg shadow-[#FF6500]/30'
+                  : 'bg-white/5 hover:bg-white/10 text-slate-300 border-white/10'
+              }`}
             >
-              {/* Traditional vs WhySchool Header */}
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-red-400 uppercase tracking-wider">
-                  <XCircle size={15} />
-                  <span>Traditional: {item.traditional}</span>
-                </div>
-                <div className="flex items-center gap-2 text-base font-extrabold text-[#FF7A1A]">
-                  <CheckCircle2 size={18} className="text-[#FF6500]" />
-                  <span>WhySchool: {item.whyschool}</span>
-                </div>
-              </div>
-
-              <p className="text-slate-300 text-sm leading-relaxed pt-2 border-t border-white/10">
-                {item.desc}
-              </p>
-            </div>
+              <span>{idx + 1}. {item.title}</span>
+            </button>
           ))}
         </div>
 
-        {/* Toggle Detailed Matrix View */}
-        <div className="text-center space-y-6">
+        {/* Main Visual Carousel Feature Card */}
+        <div className="bg-[#181C26] border border-white/15 rounded-3xl p-6 lg:p-8 shadow-2xl mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Left Image Visual Showcase Carousel */}
+            <div className="lg:col-span-6 relative">
+              <div className="relative h-[320px] sm:h-[400px] w-full rounded-2xl overflow-hidden border border-white/15 shadow-xl group">
+                <Image
+                  src={current.image}
+                  alt={current.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                  className="object-cover transition-all duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D11] via-transparent to-transparent opacity-80" />
+
+                {/* Floating Badge Overlay */}
+                <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/20 rounded-full px-3.5 py-1.5 text-xs font-bold text-white flex items-center gap-1.5">
+                  <Sparkles size={14} className="text-[#FF6500]" />
+                  <span>{current.badge}</span>
+                </div>
+
+                {/* Bottom Overlay Info */}
+                <div className="absolute bottom-4 left-4 right-4 bg-[#12151C]/90 backdrop-blur-md border border-white/10 rounded-xl p-3.5 flex items-center justify-between text-xs text-white">
+                  <span className="font-semibold">{current.tagline}</span>
+                  <span className="font-extrabold text-[#FF7A1A] px-2.5 py-1 rounded-lg bg-[#FF6500]/20 border border-[#FF6500]/30 shrink-0">
+                    {current.stats}
+                  </span>
+                </div>
+
+                {/* Arrow Navigation */}
+                <button
+                  onClick={() => setActiveTab((prev) => (prev === 0 ? transformations.length - 1 : prev - 1))}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition backdrop-blur-sm cursor-pointer"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+                <button
+                  onClick={() => setActiveTab((prev) => (prev + 1) % transformations.length)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition backdrop-blur-sm cursor-pointer"
+                >
+                  <ChevronRight size={18} />
+                </button>
+              </div>
+            </div>
+
+            {/* Right Side Visual Transformation Comparison Details */}
+            <div className="lg:col-span-6 space-y-6">
+              
+              {/* Traditional vs WhySchool Contrast Box */}
+              <div className="space-y-3 bg-[#0B0D11]/70 p-5 rounded-2xl border border-white/10">
+                <div className="flex items-center gap-2 text-xs font-bold text-red-400 uppercase tracking-wider">
+                  <XCircle size={16} className="shrink-0" />
+                  <span>Traditional System: {current.traditional}</span>
+                </div>
+                <div className="flex items-center gap-2 text-lg sm:text-xl font-black text-white pt-2 border-t border-white/10">
+                  <CheckCircle2 size={22} className="text-[#FF6500] shrink-0" />
+                  <span className="text-[#FF7A1A]">WhySchool: {current.title}</span>
+                </div>
+              </div>
+
+              {/* Detailed Explanation */}
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                {current.desc}
+              </p>
+
+              {/* 4 Pillars Mini Navigation */}
+              <div className="grid grid-cols-2 gap-3 pt-2">
+                {transformations.map((item, idx) => (
+                  <div
+                    key={item.id}
+                    onClick={() => setActiveTab(idx)}
+                    className={`p-3 rounded-xl border text-xs cursor-pointer transition ${
+                      activeTab === idx
+                        ? 'bg-[#FF6500]/20 border-[#FF6500] text-white font-bold'
+                        : 'bg-white/5 border-white/10 text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    <div className="font-semibold text-slate-200 truncate">{idx + 1}. {item.title}</div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        {/* Detailed Matrix Toggle */}
+        <div className="text-center">
           <button
             onClick={() => setShowTable(!showTable)}
-            className="py-2.5 px-6 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-bold transition border border-white/10"
+            className="py-2.5 px-6 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-bold transition border border-white/10 cursor-pointer"
           >
             {showTable ? 'Hide Detailed Paradigm Matrix' : 'View Full Paradigm Comparison Matrix'}
           </button>
@@ -122,16 +236,6 @@ export default function PhilosophySection({ onOpenInquiryModal }: PhilosophySect
               </table>
             </div>
           )}
-
-          <div>
-            <button
-              onClick={() => onOpenInquiryModal('Philosophy Consultation')}
-              className="py-3 px-6 rounded-xl bg-[#FF6500] hover:bg-[#FF7A1A] text-white font-bold text-xs transition inline-flex items-center gap-2 cursor-pointer shadow-lg shadow-[#FF6500]/25"
-            >
-              <span>Transform Your Campus Pedagogy</span>
-              <ArrowRight size={16} />
-            </button>
-          </div>
         </div>
 
       </div>
