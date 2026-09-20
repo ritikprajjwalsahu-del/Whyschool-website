@@ -1,8 +1,12 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001';
-
 export function getApiUrl(endpoint: string): string {
   const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
-  return `${API_BASE_URL}${cleanEndpoint}`;
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return `${process.env.NEXT_PUBLIC_API_URL}${cleanEndpoint}`;
+  }
+  if (typeof window !== 'undefined') {
+    return cleanEndpoint;
+  }
+  return `http://localhost:5001${cleanEndpoint}`;
 }
 
 export async function safeFetchJson(url: string, options: RequestInit = {}) {
