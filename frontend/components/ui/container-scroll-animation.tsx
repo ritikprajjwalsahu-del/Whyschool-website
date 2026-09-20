@@ -7,7 +7,7 @@ export const ContainerScroll = ({
   titleComponent,
   children,
 }: {
-  titleComponent: string | React.ReactNode;
+  titleComponent?: string | React.ReactNode;
   children: React.ReactNode;
 }) => {
   const containerRef = useRef<any>(null);
@@ -27,25 +27,25 @@ export const ContainerScroll = ({
   }, []);
 
   const scaleDimensions = () => {
-    return isMobile ? [0.7, 0.9] : [1.05, 1];
+    return isMobile ? [0.8, 0.95] : [1.02, 1];
   };
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [18, 0]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [14, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
   return (
     <div
-      className="h-[55rem] md:h-[75rem] flex items-center justify-center relative p-2 md:p-10"
+      className="h-[46rem] md:h-[58rem] flex items-center justify-center relative p-2 md:p-6"
       ref={containerRef}
     >
       <div
-        className="py-10 md:py-20 w-full relative"
+        className="py-4 md:py-8 w-full relative"
         style={{
           perspective: '1000px',
         }}
       >
-        <Header translate={translate} titleComponent={titleComponent} />
+        {titleComponent && <Header translate={translate} titleComponent={titleComponent} />}
         <Card rotate={rotate} translate={translate} scale={scale}>
           {children}
         </Card>
@@ -55,12 +55,13 @@ export const ContainerScroll = ({
 };
 
 export const Header = ({ translate, titleComponent }: any) => {
+  if (!titleComponent) return null;
   return (
     <motion.div
       style={{
         translateY: translate,
       }}
-      className="div max-w-5xl mx-auto text-center mb-6"
+      className="div max-w-5xl mx-auto text-center mb-4"
     >
       {titleComponent}
     </motion.div>
@@ -83,11 +84,11 @@ export const Card = ({
         rotateX: rotate,
         scale,
         boxShadow:
-          '0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 150px 60px #0000000b, 0 267px 75px #00000003',
+          '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03), 0 25px 50px -12px rgba(255, 101, 0, 0.15)',
       }}
-      className="max-w-6xl -mt-6 mx-auto h-[34rem] md:h-[44rem] w-full border-2 border-[#FF6500]/40 p-2 md:p-6 bg-[#131A2B]/90 rounded-[36px] shadow-2xl relative overflow-hidden backdrop-blur-xl"
+      className="max-w-6xl mx-auto h-[34rem] md:h-[42rem] w-full border border-slate-200/80 p-2 md:p-4 bg-white rounded-[32px] shadow-2xl relative overflow-hidden backdrop-blur-xl"
     >
-      <div className="h-full w-full overflow-hidden rounded-2xl bg-[#0B0D11]/95 p-4 md:p-8 flex flex-col justify-between border border-white/10">
+      <div className="h-full w-full overflow-hidden rounded-2xl bg-[#F8FAFC] p-4 md:p-6 flex flex-col justify-between border border-slate-200/60 text-slate-900">
         {children}
       </div>
     </motion.div>

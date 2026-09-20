@@ -35,7 +35,7 @@ export default function HeroSection({ onOpenInquiryModal }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-[#0B0D11] via-[#12151C] to-[#0B0D11]">
+    <section className="relative pt-28 pb-8 md:pt-36 md:pb-10 overflow-hidden bg-gradient-to-b from-[#0B0D11] via-[#12151C] to-[#0B0D11]">
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#FF6500]/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -81,19 +81,18 @@ export default function HeroSection({ onOpenInquiryModal }: HeroSectionProps) {
               </button>
             </div>
 
-            {/* Trust Stats Bar */}
-            <div className="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-left">
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-white">15+</div>
-                <div className="text-xs text-slate-400 font-semibold mt-0.5">Partner Campuses</div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-[#FF6500]">10,000+</div>
-                <div className="text-xs text-slate-400 font-semibold mt-0.5">Students Impacted</div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-white">50+</div>
-                <div className="text-xs text-slate-400 font-semibold mt-0.5">Ventures Built</div>
+            {/* Mentors & Curriculum Architects Strip (Replaces Stats) */}
+            <div className="pt-6 border-t border-white/10 text-center lg:text-left">
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
+                Mentors & Curriculum Architects Trained At Premier Global Organizations
+              </p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 opacity-90">
+                <span className="text-xs font-bold tracking-wider text-slate-200 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">IIT BOMBAY</span>
+                <span className="text-xs font-bold tracking-wider text-slate-200 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">ISRO</span>
+                <span className="text-xs font-bold tracking-wider text-slate-200 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">DRDO</span>
+                <span className="text-xs font-bold tracking-wider text-slate-200 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">DELOITTE</span>
+                <span className="text-xs font-bold tracking-wider text-slate-200 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">PwC</span>
+                <span className="text-xs font-bold tracking-wider text-slate-200 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">HCL TECH</span>
               </div>
             </div>
           </div>
@@ -147,21 +146,6 @@ export default function HeroSection({ onOpenInquiryModal }: HeroSectionProps) {
             </div>
           </div>
 
-        </div>
-
-        {/* Founders/Trainers Alumni Credibility Strip */}
-        <div className="mt-16 pt-8 border-t border-white/10">
-          <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-6">
-            Mentors & Curriculum Architects Trained At Premier Global Organizations
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
-            <span className="text-sm font-bold tracking-wider text-slate-300">IIT BOMBAY</span>
-            <span className="text-sm font-bold tracking-wider text-slate-300">ISRO</span>
-            <span className="text-sm font-bold tracking-wider text-slate-300">DRDO</span>
-            <span className="text-sm font-bold tracking-wider text-slate-300">DELOITTE</span>
-            <span className="text-sm font-bold tracking-wider text-slate-300">PwC</span>
-            <span className="text-sm font-bold tracking-wider text-slate-300">HCL TECH</span>
-          </div>
         </div>
       </div>
     </section>
