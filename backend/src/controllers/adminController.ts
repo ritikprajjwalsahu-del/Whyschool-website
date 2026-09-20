@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import { prisma } from '../config/database';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'whyschool_super_secret_jwt_key_2026_x9812';
-const DEFAULT_ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@whyschool.in';
+const DEFAULT_ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@whyschool.co';
 const DEFAULT_ADMIN_PASS = process.env.ADMIN_PASSWORD || 'Admin@WhySchool2026';
 
 const MOCK_LEADS = [

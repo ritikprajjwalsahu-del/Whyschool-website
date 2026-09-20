@@ -49,7 +49,7 @@ export default function Footer() {
             <div className="space-y-2.5">
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#FF6500]" />
-                <span>contact@whyschool.in</span>
+                <span>contact@whyschool.co</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={14} className="text-[#FF6500]" />

@@ -13,7 +13,13 @@ const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
 
 app.use(
   cors({
-    origin: [FRONTEND_URL, 'http://localhost:3000', 'http://127.0.0.1:3000'],
+    origin: [
+      FRONTEND_URL,
+      'http://localhost:3000',
+      'http://127.0.0.1:3000',
+      'https://whyschool.co',
+      'https://www.whyschool.co',
+    ],
     credentials: true,
   })
 );

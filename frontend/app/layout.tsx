@@ -29,11 +29,11 @@ export const metadata: Metadata = {
     title: 'WhySchool. | Building Young India Beyond Curriculums',
     description:
       'Degrees prove knowledge, but hands-on execution, leadership, and real-world exposure build true future readiness. Explore WhySchool experiential pods.',
-    url: 'https://whyschool.in',
+    url: 'https://whyschool.co',
     siteName: 'WhySchool.',
     images: [
       {
-        url: 'https://whyschool.in/assets/whyschool_hero_campus.jpg',
+        url: 'https://whyschool.co/assets/whyschool_hero_campus.jpg',
         width: 1200,
         height: 630,
         alt: 'WhySchool Beyond Curriculum Ecosystem',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: 'WhySchool. | Experiential Learning Ecosystem',
     description:
       'Premier educational institutions and top brands trust WhySchool as their strategic B2B experiential partner.',
-    images: ['https://whyschool.in/assets/whyschool_hero_campus.jpg'],
+    images: ['https://whyschool.co/assets/whyschool_hero_campus.jpg'],
   },
   robots: {
     index: true,
@@ -64,8 +64,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
     name: 'WhySchool.',
-    url: 'https://whyschool.in',
-    logo: 'https://whyschool.in/assets/logos/iit_bhubaneswar.jpg',
+    url: 'https://whyschool.co',
+    logo: 'https://whyschool.co/assets/logos/iit_bhubaneswar.jpg',
     description:
       'Strategic B2B experiential partner for premier educational institutions and top brands — building real-world innovators, researchers, and student founders beyond traditional syllabi.',
     address: {

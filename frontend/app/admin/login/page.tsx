@@ -6,7 +6,7 @@ import { ShieldCheck, Lock, Mail, ArrowRight } from 'lucide-react';
 import { getApiUrl, safeFetchJson } from '@/lib/api';
 
 export default function AdminLoginPage() {
-  const [email, setEmail] = useState('admin@whyschool.in');
+  const [email, setEmail] = useState('admin@whyschool.co');
   const [password, setPassword] = useState('Admin@WhySchool2026');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -72,7 +72,7 @@ export default function AdminLoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@whyschool.in"
+                placeholder="admin@whyschool.co"
                 className="w-full bg-[#0A0E1A] border border-white/10 rounded-xl py-3 pl-11 pr-4 text-white text-sm focus:outline-none focus:border-[#FF5722] transition"
               />
             </div>
@@ -112,7 +112,7 @@ export default function AdminLoginPage() {
         </form>
 
         <div className="mt-8 pt-6 border-t border-white/10 text-center text-xs text-slate-500">
-          Default Testing Login: <span className="text-slate-300">admin@whyschool.in</span> / <span className="text-slate-300">Admin@WhySchool2026</span>
+          Default Testing Login: <span className="text-slate-300">admin@whyschool.co</span> / <span className="text-slate-300">Admin@WhySchool2026</span>
         </div>
       </div>
     </div>

@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/admin/'],
       },
     ],
-    sitemap: 'https://whyschool.in/sitemap.xml',
+    sitemap: 'https://whyschool.co/sitemap.xml',
   };
 }
