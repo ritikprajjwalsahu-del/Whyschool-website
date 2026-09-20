@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { X, Send, CheckCircle2, Sparkles } from 'lucide-react';
+import { getApiUrl, safeFetchJson } from '@/lib/api';
 
 interface InquiryModalProps {
   isOpen: boolean;
@@ -58,15 +59,23 @@ export default function InquiryModal({
         message,
       };
 
-      const res = await fetch('/api/inquiries', {
+      // Try primary backend URL first, fallback to relative URL
+      let apiUrl = getApiUrl('/api/inquiries');
+      let result = await safeFetchJson(apiUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || 'Failed to submit inquiry.');
+      if (!result.ok && result.data?.error?.includes('Network error')) {
+        // Fallback attempt to relative Next.js endpoint
+        result = await safeFetchJson('/api/inquiries', {
+          method: 'POST',
+          body: JSON.stringify(payload),
+        });
+      }
+
+      if (!result.ok) {
+        throw new Error(result.data?.error || 'Failed to submit inquiry request.');
       }
 
       setSuccess(true);
@@ -137,7 +146,7 @@ export default function InquiryModal({
           <form onSubmit={handleSubmit} className="space-y-4 text-xs">
             {error && (
               <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs">
-                {error}
+                ⚠️ {error}
               </div>
             )}
 

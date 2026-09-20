@@ -16,6 +16,7 @@ import {
   Mail,
   Phone,
 } from 'lucide-react';
+import { getApiUrl, safeFetchJson } from '@/lib/api';
 
 interface Inquiry {
   id: string;
@@ -49,14 +50,14 @@ export default function AdminDashboardPage() {
       if (statusFilter !== 'ALL') query.append('status', statusFilter);
       if (search) query.append('search', search);
 
-      const res = await fetch(`/api/admin/inquiries?${query.toString()}`);
-      if (res.status === 401) {
+      const apiUrl = getApiUrl(`/api/admin/inquiries?${query.toString()}`);
+      const result = await safeFetchJson(apiUrl);
+      if (result.status === 401) {
         router.push('/admin/login');
         return;
       }
-      const data = await res.json();
-      if (data.success) {
-        setInquiries(data.data);
+      if (result.ok && result.data.success) {
+        setInquiries(result.data.data);
       }
     } catch (err: any) {
       setError('Failed to load inquiries.');
@@ -76,12 +77,12 @@ export default function AdminDashboardPage() {
 
   const handleStatusChange = async (id: string, newStatus: string) => {
     try {
-      const res = await fetch(`/api/admin/inquiries/${id}`, {
+      const apiUrl = getApiUrl(`/api/admin/inquiries/${id}`);
+      const result = await safeFetchJson(apiUrl, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus }),
       });
-      if (res.ok) {
+      if (result.ok) {
         setInquiries((prev) =>
           prev.map((item) => (item.id === id ? { ...item, status: newStatus as any } : item))
         );
@@ -97,8 +98,9 @@ export default function AdminDashboardPage() {
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to delete this lead?')) return;
     try {
-      const res = await fetch(`/api/admin/inquiries/${id}`, { method: 'DELETE' });
-      if (res.ok) {
+      const apiUrl = getApiUrl(`/api/admin/inquiries/${id}`);
+      const result = await safeFetchJson(apiUrl, { method: 'DELETE' });
+      if (result.ok) {
         setInquiries((prev) => prev.filter((item) => item.id !== id));
         if (selectedInquiry?.id === id) setSelectedInquiry(null);
       }
@@ -108,7 +110,8 @@ export default function AdminDashboardPage() {
   };
 
   const handleLogout = async () => {
-    await fetch('/api/admin/logout', { method: 'POST' });
+    const apiUrl = getApiUrl('/api/admin/logout');
+    await safeFetchJson(apiUrl, { method: 'POST' });
     router.push('/admin/login');
   };
 

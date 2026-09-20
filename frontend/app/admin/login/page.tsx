@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { ShieldCheck, Lock, Mail, ArrowRight } from 'lucide-react';
+import { getApiUrl, safeFetchJson } from '@/lib/api';
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState('admin@whyschool.in');
@@ -17,15 +18,14 @@ export default function AdminLoginPage() {
     setError('');
 
     try {
-      const res = await fetch('/api/admin/login', {
+      const apiUrl = getApiUrl('/api/admin/login');
+      const result = await safeFetchJson(apiUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || 'Login failed. Invalid admin credentials.');
+      if (!result.ok) {
+        throw new Error(result.data?.error || 'Login failed. Invalid admin credentials.');
       }
 
       router.push('/admin/dashboard');
