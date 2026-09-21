@@ -12,7 +12,7 @@ const MOCK_LEADS = [
     id: 'lead-101',
     name: 'Dr. Rajesh Sharma',
     email: 'r.sharma@iitbbs.ac.in',
-    phone: '+91 98765 43210',
+    phone: '+91 7326869001',
     institutionName: 'IIT Bhubaneswar',
     institutionType: 'College',
     inquiryType: 'Campus Audit Request',

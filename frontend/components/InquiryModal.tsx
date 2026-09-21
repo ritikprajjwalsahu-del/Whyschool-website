@@ -189,7 +189,7 @@ export default function InquiryModal({
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+91 98765 43210"
+                  placeholder="+91 7326869001"
                   className="w-full bg-[#0A0E1A] border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-[#FF6500]"
                 />
               </div>

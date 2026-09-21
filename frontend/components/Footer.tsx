@@ -28,7 +28,6 @@ export default function Footer() {
               <span className="font-bold text-white uppercase tracking-wider block">Ecosystem</span>
               <ul className="space-y-2">
                 <li><a href="#methodology" className="hover:text-[#FF6500] transition">Methodology</a></li>
-                <li><a href="#philosophy" className="hover:text-[#FF6500] transition">Philosophy</a></li>
                 <li><a href="#partners" className="hover:text-[#FF6500] transition">Partners</a></li>
                 <li><a href="#impact-calculator" className="hover:text-[#FF6500] transition">Impact Calculator</a></li>
               </ul>
@@ -49,15 +48,15 @@ export default function Footer() {
             <div className="space-y-2.5">
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#FF6500]" />
-                <span>contact@whyschool.co</span>
+                <a href="mailto:office@whyschool.co" className="hover:text-white transition">office@whyschool.co</a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={14} className="text-[#FF6500]" />
-                <span>+91 98765 43210</span>
+                <a href="tel:+917326869001" className="hover:text-white transition">+91 7326869001</a>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin size={14} className="text-[#FF6500]" />
-                <span>Bhubaneswar, Odisha, India</span>
+              <div className="flex items-start gap-2">
+                <MapPin size={14} className="text-[#FF6500] shrink-0 mt-0.5" />
+                <span>DCB 321, DLF Cybercity, Bhubaneswar 751024</span>
               </div>
             </div>
 
