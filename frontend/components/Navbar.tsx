@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {
@@ -37,11 +38,21 @@ export default function Navbar({ onOpenInquiryModal }: NavbarProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo with exact circular dot */}
-        <Link href="/" className="brand-logo group flex items-end">
-          <span className="logo-why text-[#FF6500] font-black text-2xl sm:text-3xl tracking-tight">Why</span>
-          <span className="logo-school text-white font-medium text-2xl sm:text-3xl tracking-tight">School</span>
-          <span className="logo-dot w-[7px] h-[7px] bg-[#FF6500] rounded-full ml-1 mb-1.5 shadow-[0_0_8px_rgba(255,101,0,0.6)] inline-block align-baseline" />
+        {/* Official Brand Logo */}
+        <Link href="/" className="brand-logo group flex items-center gap-2.5">
+          <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-white p-0.5 shadow-md transition group-hover:scale-105 shrink-0">
+            <Image
+              src="/assets/whyschool_logo.png"
+              alt="WhySchool Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="flex items-end">
+            <span className="logo-why text-[#FF6500] font-black text-2xl sm:text-3xl tracking-tight">Why</span>
+            <span className="logo-school text-white font-medium text-2xl sm:text-3xl tracking-tight">School</span>
+            <span className="logo-dot w-[7px] h-[7px] bg-[#FF6500] rounded-full ml-1 mb-1.5 shadow-[0_0_8px_rgba(255,101,0,0.6)] inline-block align-baseline" />
+          </div>
         </Link>
 
         {/* Desktop Nav Links (Pushed far right with lesser space between them) */}

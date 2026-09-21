@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 import { ShieldCheck, Lock, Mail, ArrowRight, RefreshCw, AlertCircle } from 'lucide-react';
 import { getApiUrl, safeFetchJson } from '@/lib/api';
 
@@ -149,8 +150,14 @@ export default function AdminLoginPage() {
 
       <div className="w-full max-w-md bg-[#131A2B]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl relative z-10">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#FF5722]/15 border border-[#FF5722]/30 mb-4 text-[#FF5722]">
-            <ShieldCheck size={32} />
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white p-2 border border-[#FF5722]/30 mb-4 shadow-lg shadow-[#FF5722]/10 relative">
+            <Image
+              src="/assets/whyschool_logo.png"
+              alt="WhySchool Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
           </div>
           <div className="flex items-center justify-center gap-1.5 mb-2">
             <span className="text-2xl font-bold tracking-tight text-white">WhySchool</span>

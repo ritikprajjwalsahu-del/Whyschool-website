@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'WhySchool Ecosystem' }],
   icons: {
-    icon: '/favicon.ico',
+    icon: '/icon.png',
     shortcut: '/favicon.png',
-    apple: '/icon.jpg',
+    apple: '/icon.png',
   },
   openGraph: {
     title: 'WhySchool. | Building Young India Beyond Curriculums',
@@ -70,7 +70,7 @@ export default function RootLayout({
     '@type': 'EducationalOrganization',
     name: 'WhySchool.',
     url: 'https://whyschool.co',
-    logo: 'https://whyschool.co/assets/logos/iit_bhubaneswar.jpg',
+    logo: 'https://whyschool.co/assets/whyschool_logo.png',
     description:
       'Strategic B2B experiential partner for premier educational institutions and top brands — building real-world innovators, researchers, and student founders beyond traditional syllabi.',
     address: {

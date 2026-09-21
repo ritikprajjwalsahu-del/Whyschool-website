@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight, Mail, Phone, MapPin, Lock } from 'lucide-react';
 
 export default function Footer() {
@@ -12,10 +13,20 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="md:col-span-4 space-y-4">
-            <Link href="/" className="brand-logo flex items-end">
-              <span className="logo-why text-[#FF6500] font-black text-2xl tracking-tight">Why</span>
-              <span className="logo-school text-white font-medium text-2xl tracking-tight">School</span>
-              <span className="logo-dot w-[7px] h-[7px] bg-[#FF6500] rounded-full ml-1 mb-1.5 shadow-[0_0_8px_rgba(255,101,0,0.6)] inline-block align-baseline" />
+            <Link href="/" className="brand-logo flex items-center gap-2.5">
+              <div className="relative w-7 h-7 rounded-lg overflow-hidden bg-white p-0.5 shadow-md shrink-0">
+                <Image
+                  src="/assets/whyschool_logo.png"
+                  alt="WhySchool Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex items-end">
+                <span className="logo-why text-[#FF6500] font-black text-2xl tracking-tight">Why</span>
+                <span className="logo-school text-white font-medium text-2xl tracking-tight">School</span>
+                <span className="logo-dot w-[7px] h-[7px] bg-[#FF6500] rounded-full ml-1 mb-1.5 shadow-[0_0_8px_rgba(255,101,0,0.6)] inline-block align-baseline" />
+              </div>
             </Link>
             <p className="text-xs text-slate-400 leading-relaxed">
               Strategic B2B experiential partner for premier educational institutions and top brands—building real-world innovators, researchers, and student founders beyond traditional syllabi.
